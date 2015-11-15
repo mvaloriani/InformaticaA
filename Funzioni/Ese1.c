@@ -12,12 +12,21 @@ restituisce il prodotto di tutti gli elementi di A.
 #define N 10
 typedef int VT[N];
 
-int ft(VT A, VT B) {
+int ft(VT  A , VT B) {
 	int i, j, prod = 1;
 	for (i = 0, j = N - 1; i<N; i++, j--) {
 		B[j] = A[i];
 		prod = prod * A[i];
 	}
+
+	/*for (i = 0; i < N; i++) {
+		prod = prod * A[i];
+	}
+
+	for (i = 0; i < N; i++) {
+		B[N - i - 1] = A[i];
+	}*/
+
 	return prod;
 }
 
@@ -27,7 +36,7 @@ int main() {
 	for (j = 0; j<10; j++)
 		printf("%d\n", v[j]);
 
-	printf("prodotto: %d\n", ft(v, w));
+	printf("prodotto: %d\n", ft(&v[0], w));
 
 	printf("vettore invertito");
 	for (j = 0; j<10; j++)

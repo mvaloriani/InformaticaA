@@ -3,12 +3,6 @@ Scrivere una funzione che riceve in input due array di N elementi
 e copia nel secondo gli elementi di valore pari del primo senza
 lasciare buchi. La funzione restituisce il numero di elementi copiati.
 
-Scrivere una funzione che riceve in input un array di N elementi e 
-restituisce una struct composta da un intero e da un array. 
-La funzione inserisce nell’array contenuto nella struct gli
-elementi pari dell’array che riceve in input e assegna all’intero 
-contenuto nella struct il numero di elementi copiati.
-
 */
 
 #include <stdlib.h>

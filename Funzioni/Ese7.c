@@ -14,7 +14,7 @@ principale i cui valori sono uguali ad 1.
 #include <stdlib.h>
 #include <stdio.h>
 
-#define N 100
+#define N 10
 typedef int MATR[N][N];
 typedef struct { MATR x; int L; } EXT;
 
