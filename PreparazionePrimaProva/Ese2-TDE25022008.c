@@ -13,27 +13,52 @@ int f(float m[N][M]) {
 
   //esploro la matrice
   for(i=0; i < N;i++) {
-	for(j=0; j < M;j++) {
-		cont=0;
+	  for (j = 0; j < M; j++) {
 
-		// valuto i valori intorno alla posizione i,j
-		for(k=i-1; k <= i+1;k++) {
-			for(t=j-1; t <= j+1;t++) {
-				// sono fuori dalla matrice
-				if(k < 0 || k >= N || t < 0 || t >= M) {
-					cont++;
-				}
-				// condizione da verificare
-				else if(condPicco(m[i][j], m[k][t]))
-					cont++;
-			}
-		}
-		//tutti gli elementi verificano la condizione
-		if(cont==8)
-			quanti++;	
-	}
+
+		  //cont=0;
+		  //// valuto i valori intorno alla posizione i,j
+		  //for(k=i-1; k <= i+1;k++) {
+		  //	for(t=j-1; t <= j+1;t++) {
+		  //		// sono fuori dalla matrice
+		  //		if(k < 0 || k >= N || t < 0 || t >= M) {
+		  //			cont++;
+		  //		}
+		  //		// condizione da verificare
+		  //		else if(condPicco(m[i][j], m[k][t]))
+		  //			cont++;
+		  //	}
+		  //}
+
+
+		  //tutti gli elementi verificano la condizione
+		  if (fun2(i, j, m) == 1)
+			  quanti++;
+	  }
     }
     return quanti;
+}
+
+
+int fun2(int i, int j, float m[N][M]) {
+	int cont = 0;
+	// valuto i valori intorno alla posizione i,j
+	for (int k = i - 1; k <= i + 1; k++) {
+		for (int t = j - 1; t <= j + 1; t++) {
+			// sono fuori dalla matrice
+			if (k < 0 || k >= N || t < 0 || t >= M) {
+				cont++;
+			}
+			// condizione da verificare
+			else if (condPicco(m[i][j], m[k][t]))
+				cont++;
+		}
+	}
+
+	if (count == 8) return 1;
+	else
+		return 0;
+
 }
 
 int condPicco(int centro, int intorno){

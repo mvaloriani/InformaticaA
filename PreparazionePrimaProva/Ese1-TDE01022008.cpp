@@ -1,12 +1,15 @@
 /*
 Dato il tipo
 typedef struct { int V[20];  int C;     } STR; 
-Scrivere una funzione con un parametro formale X di tipo STR e un parametro formale MATR
+Scrivere una funzione con un parametro formale X di tipo STR e 
+un parametro formale MATR
 di tipo matrice 20x20 interi. 
 
 La funzione considera i primi C elementi contenuti nel campo V di X e restituisce
-la somma di quelli tra loro che sono multipli di almeno tre elementi della matrice MATR. 
-Si supponga che il valore del campo C  sia sempre compreso tra 0 e 19 (estremi inclusi). 
+la somma di quelli tra loro che sono multipli di almeno tre 
+elementi della matrice MATR. 
+Si supponga che il valore del campo C  sia sempre compreso 
+tra 0 e 19 (estremi inclusi). 
 Si utilizzino opportune funzioni ausiliarie per dividere il problema 
 in sottoproblemi più semplici.
 */

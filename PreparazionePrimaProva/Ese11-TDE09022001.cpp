@@ -60,7 +60,7 @@ int verifica2(int n, int m1[][N]){
 			{
 				for (int j = 0; j < N; j++)
 				{
-					if (m1[i][j] + m1[c][r] == n)
+					if (m1[i][j] + m1[c][r] == n && !( i==c && j==r))
 						return 1;
 				}
 			}

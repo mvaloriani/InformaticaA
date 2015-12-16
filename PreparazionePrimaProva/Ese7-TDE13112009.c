@@ -74,7 +74,7 @@ void lancia(int lanci,int facce) {
 	//}
 	//while (flag == 1);
 
-è	/*
+	/*
 	//http://it.wikipedia.org/wiki/Insertion_sort
 	faccia temp;
     for (int i = 1; i < facce; i++) {
