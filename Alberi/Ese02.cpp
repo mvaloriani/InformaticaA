@@ -1,11 +1,13 @@
 /*
-Un albero binario si dice isobato se tutti i cammini dalla radice alle foglie hanno la stessa lunghezza
+Un albero binario si dice isobato se tutti i
+cammini dalla radice alle foglie hanno la stessa lunghezza
 Data la seguente definizione di albero
 typedef struct EL    {	int dato;
 struct EL *left;
 struct EL *right;   } Node;
 typedef Node *tree;
-codificare una funzione che riceve in input un albero e restituisce 1 se l’albero è isobato, 0 altrimenti.
+codificare una funzione che riceve in input un albero e
+restituisce 1 se l’albero è isobato, 0 altrimenti.
 */
 
 #include <stdio.h> 
@@ -55,10 +57,16 @@ int maxdepth(tree t) {
 		return 0;
 	S = maxdepth(t->left);
 	D = maxdepth(t->right);
+	
+
 	if (S > D)
 		return S + 1;
 	else
 		return D + 1;
+
+	/*variazione a 3
+	C = maxdepth(t->right);
+	return max(S, D, C) + 1;*/
 }
 
 int mindepth(tree t) {

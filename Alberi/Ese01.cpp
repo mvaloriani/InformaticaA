@@ -1,5 +1,6 @@
 /*
-Sia data la seguente struttura per la memorizzazione di alberi binari etichettati con numeri interi:
+Sia data la seguente struttura per la memorizzazione 
+di alberi binari etichettati con numeri interi:
 typedef struct nodo {
 int info;
 struct nodo *left, *right;
@@ -8,7 +9,8 @@ typedef NODO *tree;
 Si devono scrivere due funzioni ricorsive
 int sommaNodi(tree t);
 int cercaMax(tree t);
-delle quali, sommaNodi somma i valori delle etichette nell'albero, mentre cercaMax cerca il valore dell'etichetta massima dell'albero.
+delle quali, sommaNodi somma i valori delle etichette nell'albero,
+mentre cercaMax cerca il valore dell'etichetta massima dell'albero.
 int sommaNodi(tree t);
 int cercaMax(tree t);
 */

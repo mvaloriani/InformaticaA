@@ -1,10 +1,19 @@
 /*
-Un albero N-ario generico è un albero i cui nodi possono avere un numero arbitrariamente grande di rami uscenti. Si definisca una struttura dati adatta a rappresentare un albero N-ario. Per semplicità si consideri il caso in cui i nodi contengono, come dati utili, dei semplici numeri interi.
-Ogni nodo contiene, invece di una coppia di puntatori a nodi, come nel caso degli alberi binari, una lista di puntatori a nodo. Tale lista è una lista concatenata semplice, realizzata tramite la struttura Ramo.
+Un albero N-ario generico è un albero i cui nodi
+possono avere un numero arbitrariamente grande
+di rami uscenti. Si definisca una struttura
+dati adatta a rappresentare un albero N-ario.
+Per semplicità si consideri il caso in cui i
+nodi contengono, come dati utili, dei semplici numeri interi.
+Ogni nodo contiene, invece di una coppia di
+puntatori a nodi, come nel caso degli alberi binari,
+una lista di puntatori a nodo. Tale lista è una
+lista concatenata semplice, realizzata tramite la struttura Ramo.
 typedef Nodo * Albero;
 typedef struct Branch { Albero child;  struct Branch * next; } Ramo;
 typedef struct Knot { int  dato; Ramo * rami;  } Nodo;
-Si progetti (e/o codifichi) la funzione int conta( … ) che conta il numero di nodi di un albero N-ario.
+Si progetti (e/o codifichi) la funzione int conta( … ) 
+che conta il numero di nodi di un albero N-ario.
 
 */
 #include <stdio.h> 
@@ -25,7 +34,7 @@ int conta(Albero t) {
 		n = 1;
 		Ramo * cur = t->rami;
 		while (cur != NULL) {
-			n += conta(cur->child);
+			n += contaRami(cur->child);
 			cur = cur->next;
 		}
 		return n;

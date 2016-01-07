@@ -1,10 +1,13 @@
 /*
-Si consideri un albero ternario privo di dati e rappresentato dalla seguente definizione ricorsiva:
+Si consideri un albero ternario privo di dati e 
+rappresentato dalla seguente definizione ricorsiva:
 typedef struct Elemento {
 int dato;
 struct Elemento * left, * center, * right; } Nodo;
 typedef Nodo * Tree;
-Si progetti un algoritmo ed eventualmente si codifichi una funzione C che restituisce 1 se tutti i cammini dalla radice dell'albero alle foglie hanno la stessa lunghezza, e restituisce 0 altrimenti.
+Si progetti un algoritmo ed eventualmente si codifichi una funzione C 
+che restituisce 1 se tutti i cammini dalla radice dell'albero
+alle foglie hanno la stessa lunghezza, e restituisce 0 altrimenti.
 */
 #include <stdio.h> 
 #include <string.h>
