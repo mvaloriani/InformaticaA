@@ -146,6 +146,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ese01.cpp" />
+    <ClCompile Include="Ese02.cpp" />
+    <ClCompile Include="Ese03.cpp" />
+    <ClCompile Include="Ese04.cpp" />
+    <ClCompile Include="Ese05.cpp" />
+    <ClCompile Include="Ese06.cpp" />
+    <ClCompile Include="Ese07.cpp" />
+    <ClCompile Include="TDE18022009.cpp" />
+    <ClCompile Include="TDE26012009.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

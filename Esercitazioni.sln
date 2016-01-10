@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Struct", "EsercitazioneStruct\EsercitazioneStruct.vcxproj", "{AD0CCEA5-EB25-4F1D-9366-9FABE208AD66}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Liste", "Liste\Liste.vcxproj", "{772371DC-2BEF-4E8F-975A-0D84275A5649}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EsArray", "EsArray\EsArray.vcxproj", "{2100DABB-87F6-44A0-90D5-BA23E6064021}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Alberi", "Alberi\Alberi.vcxproj", "{1A022855-C187-411C-8510-B1B1C7113FCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +117,20 @@ Global
 		{2100DABB-87F6-44A0-90D5-BA23E6064021}.Release|Win32.Build.0 = Release|Win32
 		{2100DABB-87F6-44A0-90D5-BA23E6064021}.Release|x64.ActiveCfg = Release|x64
 		{2100DABB-87F6-44A0-90D5-BA23E6064021}.Release|x64.Build.0 = Release|x64
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Debug|Win32.Build.0 = Debug|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Debug|x64.ActiveCfg = Debug|x64
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Debug|x64.Build.0 = Debug|x64
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Release|Any CPU.ActiveCfg = Release|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Release|Win32.ActiveCfg = Release|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Release|Win32.Build.0 = Release|Win32
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Release|x64.ActiveCfg = Release|x64
+		{1A022855-C187-411C-8510-B1B1C7113FCB}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

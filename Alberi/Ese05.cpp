@@ -37,11 +37,11 @@ int artussiano(tree t) {
 	if (t->left == NULL && t->right == NULL)
 		return 1;
 	if (t->left == NULL)
-		return artussiano(t->right)
-		if (t->right == NULL)
-			return artussiano(t->left)
-			if (contaNodi(t->left) == contaNodi(t->right) &&
-				artussiano(t->left) && artussiano(t->right))
-				return 1;
+		return artussiano(t->right);
+	if (t->right == NULL)
+		return artussiano(t->left);
+	if (contaNodi(t->left) == contaNodi(t->right) &&
+		artussiano(t->left) && artussiano(t->right))
+		return 1;
 	return 0;
 }

@@ -1,10 +1,13 @@
 /*
-Si consideri la seguente definizione di un albero binario (binario=con due rami in ogni nodo):
+Si consideri la seguente definizione di un albero
+binario (binario=con due rami in ogni nodo):
 typedef struct EL { int dato;
 struct EL * left,  * right; } node;
 typedef node * tree;
-Si scriva una funzione che prende in ingresso un albero binario e 
-restituisce 1 se tutti i nodi godono delle proprietà di avere come discendenti
+Si scriva una funzione che prende in ingresso un albero 
+binario e 
+restituisce 1 se tutti i nodi godono delle proprietà 
+di avere come discendenti
 a sinistra solo nodi con valori più piccoli e a
 destra solo nodi con valori più grandi, 0 altrimenti.
 
