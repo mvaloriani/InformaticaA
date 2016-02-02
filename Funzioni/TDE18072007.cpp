@@ -35,7 +35,8 @@ int valida(char parola[]) {
 	int i, p, cont, lun = strlen(parola);
 	if (lun < 2)  return 0;
 	for (i = 0; i<26; i++) {
-		for (cont = 0, p = 0; p<lun; p++) if (parola[p] == 'A' + i) cont++;
+		for (cont = 0, p = 0; p<lun; p++) 
+			if (parola[p] == 'A' + i) cont++;
 		if (cont > numero[i]) return 0;
 	}
 	return 1;

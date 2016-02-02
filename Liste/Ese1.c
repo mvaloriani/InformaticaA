@@ -43,6 +43,7 @@ int cerca(Lista lista, char* line)
 	}
 }
 
+//Nodo **lista
 void insTesta(Lista *lista, char * line) {     // Normale inserimento in
 	Lista tmp = *lista;                            // testa con assegnamento
 	*lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy

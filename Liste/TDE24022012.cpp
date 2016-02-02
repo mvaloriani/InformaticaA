@@ -1,6 +1,13 @@
 /*
-Si disegnino lo stack dei record di attivazione e la memoria allocata dal programma nello heap nell段stante in cui la funzione f() inizia a eseguire l段struzione indicata dalla freccia. Si rappresentino tutte le variabili (vettori: blocchi contigui; puntatori: frecce; valori indefiniti: punti interrogativi)
-Si calcoli la dimensione in byte della memoria allocata sullo stack (var. statiche e automatiche, tralasciando gli indirizzi di ritorno) e di quella allocata nello heap (sizeof(int)=sizeof(void*)=4)
+Si disegnino lo stack dei record di attivazione e la memoria allocata
+dal programma nello heap nell段stante in cui la funzione f() 
+inizia a eseguire l段struzione indicata dalla freccia. 
+Si rappresentino tutte le variabili (vettori: blocchi contigui;
+puntatori: frecce; v
+alori indefiniti: punti interrogativi)
+Si calcoli la dimensione in byte della memoria allocata sullo stack 
+(var. statiche e automatiche, tralasciando gli indirizzi di ritorno)
+e di quella allocata nello heap (sizeof(int)=sizeof(void*)=4)
 Si indichi la linea stampata dal programma sullo standard output
 
 */

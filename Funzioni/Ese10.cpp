@@ -7,7 +7,7 @@ a partire da quale indice. Creare quindi una nuova stringa S3
 costruita come S1 meno la prima occorrenza della stringa S2. 
 Non è permesso utilizzare le funzioni di libreria del linguaggio
 relative alla manipolazione di stringhe.
-Esempio: S1 = “melograno”, S2 = “crano”; 
+Esempio: S1 = “melograno”, S2 = “grano”; 
 restituisce 5 (S2 è inclusa in S1 a partire dal 5° carattere) e
 S3 = “melo”.
 Se fosse S1 = “sperpero”, S2 = “per”;

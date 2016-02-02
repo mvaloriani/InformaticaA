@@ -11,7 +11,8 @@ tutti strettamente positivi. La funzione deve cercare di copiare ogni valore v
 della lista nella matrice, inserendolo al posto di un valore che sia multiplo di v.
 Se ci riesce, restituisce 1, e la matrice deve contenere tutti i valori modificati,
 se non ci riesce, però, oltre a restituire 0, deve lasciare inalterata la matrice.
-Attenzione: (1) i valori v devono sempre essere confrontati con la versione iniziale della matrice,
+Attenzione: 
+(1) i valori v devono sempre essere confrontati con la versione iniziale della matrice,
 non con le versioni "intermedie" derivanti dalla sostituzione di alcuni valori,
 (2) se ci sono più multipli di v, se ne può sostituire uno a piacere (il primo che si incontra),
 (3) si badi a definire chiaramente e/o dichiarare eventuali opportune strutture dati di appoggio
@@ -73,7 +74,8 @@ int spargidivisori(Lista lista, int mat[N][N]){
 
 
 
-/* Questa versione è molto inefficiente perchè duplica una matrice inutilmente e speca spazio
+/* Questa versione è molto inefficiente perchè duplica una 
+matrice inutilmente e speca spazio
 vediamo una versione alternativa
 */
 

@@ -18,7 +18,12 @@ se due intervalli hanno almeno un punto in comune, 0 altrimenti
 //! ( i1.a < i2.da || i2.a < i1.da )    =    ( i1.a >= i2.da && i2.a >= i1.da )
 
 int sovrapposti( Intervallo i1, Intervallo i2 ) {
-	return  i1.da >= i2.a && i2.a <= i1.da;
+
+	if ((i1.da <= i2.a && i2.a <= i1.a) || (i1.da <= i2.da && i2.da <= i1.a) ||
+		(i2.da <= i1.a && i1.a <= i2.a) || (i2.da <= i1.da && i1.da <= i2.a))
+		return 1;
+	return 0;
+
 }
 
 /*b)	Si implementi in C la funzione fondi() che riceve in input due intervalli

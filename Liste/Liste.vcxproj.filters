@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ese1.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TDE14092010.cpp">
+    <ClCompile Include="TDE24022012.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

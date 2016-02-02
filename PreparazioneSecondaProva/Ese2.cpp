@@ -93,14 +93,17 @@ int hertree( tree t ) {
 	// valuto ricorsivamente l'albero di sinistra
 	if( ! hertree( t->left ) ) return 0;
 	// valuto ricorsivamente l'albero di destra
-	return hertree( t->right );
+	if (!hertree(t->right)) return 0;
+	// valuto ricorsivamente l'albero di destra
+	return 1;
 }
 
 
 
 /*
 (d)	In una lista, parole compatibili possono trovarsi anche distanti tra loro.
-Si può però provare, con una scansione della lista, a costruire un albero binario Hertzianamente percorribile:
+Si può però provare, con una scansione della lista, a costruire un albero binario Hertzianamente
+percorribile:
 si inizia ponendo nella radice la prima parola della lista e si prosegue “appendendo” le parole che
 si incontrano via via nella lista a un qualsiasi nodo dell’abero che non abbia già due figli 
 e che contenga una parola compatibile. Si codifichi in C una funzione ...build(...) 
