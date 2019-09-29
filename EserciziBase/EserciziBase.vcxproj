@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Esercizio12.cpp" />
-    <ClCompile Include="Esercizio13.cpp" />
+    <ClCompile Include="Esercizio15.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
