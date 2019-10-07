@@ -41,7 +41,7 @@ int main() {
 
 	////oppure
 	//i = 1;
-	//while (i < N + N) {
+	//while (i < N) {
 	//	if (i % 2 != 0)
 	//		S = S + (i);
 	//	i++;
@@ -54,11 +54,11 @@ int main() {
 	//	i = i + 2;
 	//}
 
-	//oppure
-	for (i = 1; i < 2*N; i=i+2)
-	{
-		S = S + i;
-	}
+	////oppure
+	//for (i = 1; i < 2*N; i=i+2)
+	//{
+	//	S = S + i;
+	//}
 
 
 	printf("Il quadrato del numero inserito e': %d \n", S);

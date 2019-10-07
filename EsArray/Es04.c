@@ -1,3 +1,7 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 //Scrivere un programma C che :
 //Legge una sequenza di numeri interi e quei numeri compresi tra 0 e 1023 
 //vengono memorizzati in un vettore di nome V.La lettura termina quando nel vettore sono stati inseriti 10 numeri

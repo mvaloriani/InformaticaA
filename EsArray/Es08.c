@@ -1,3 +1,7 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 /*
 Si scriva un programma C che all'interno del main consenta di inizializzare da tastiera un vettore di interi di lunghezza massima pari a 20. 
 La lunghezza effettiva della sequenza acquisita è stabilita dall'utente (ad esempio, acquisendo da tastiera il valore di una variabile n). 

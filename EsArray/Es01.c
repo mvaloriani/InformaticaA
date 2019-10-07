@@ -1,3 +1,7 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 /*
 Scrivere un programma in C che legge un vettore
 di interi di dimensione fissata e ne stampa la somma
@@ -20,12 +24,12 @@ int main() {
 	}
 
 	///* Somma gli elementi del vettore */
-	//for (i = 0; i < LUNG; i++) {
-	//	sum = sum + vett[i];
-	//}
+	/*for (i = 0; i < LUNG; i++) {
+		sum = sum + vett[i];
+	}*/
 
 	/* Stampa la somma */
 	printf("Somma: %d\n", sum);
-
+	system("pause");
 		return 0;
 }

@@ -29,31 +29,30 @@ int main()
 	scanf("%d", &c);
 
 	//Solution 1
-	//if (a < b) {
-	//	if (b < c) { printf("\n L'ordine voluto e': %d, %d, %d\n", a, b, c); }
-	//	else {
-	//		if (a < c) {
-	//			printf("\n L'ordine voluto e': %d, %d, %d\n", a, c, b); 
+	if (a < b) {
+		if (b < c) { printf("\n L'ordine voluto e': %d, %d, %d\n", a, b, c); }
+		else {
+			if (a < c) {
+				printf("\n L'ordine voluto e': %d, %d, %d\n", a, c, b); 
+			}
+			else { 
+				printf("\n L'ordine voluto e': %d, %d, %d\n", c, a, b); 
+			}
+		}
+	}
+	else {
+		if (c < b) { printf("\n L'ordine voluto e': %d, %d, %d\n", c, b, a); }
+		else {
+			if (a < c) {
+				printf("\n L'ordine voluto e': %d, %d, %d\n", b, a, c); 
+			}
+			else { 
+				printf("\n L'ordine voluto e': %d, %d, %d \n", b, c, a); 
+			}
+		}
+	}
 
-	//		}
-	//		else { 
-	//			printf("\n L'ordine voluto e': %d, %d, %d\n", c, a, b); 
-	//		}
-	//	}
-	//}
-	//else {
-	//	if (c < b) { printf("\n L'ordine voluto e': %d, %d, %d\n", c, b, a); }
-	//	else {
-	//		if (a < c) {
-	//			printf("\n L'ordine voluto e': %d, %d, %d\n", b, a, c); 
-	//		}
-	//		else { 
-	//			printf("\n L'ordine voluto e': %d, %d, %d \n", b, c, a); 
-	//		}
-	//	}
-	//}
-
-	////Solution 2
+	//Solution 2
 	int temp;
 	if (a > b) { temp = a;    a = b;    b = temp; }
 	if (a > c) { temp = a;    a = c;    c = temp; }

@@ -30,7 +30,9 @@ int main() {
 			printf("Inserire un altro valore:"); 
 			scanf("%d", &elemento);
 			i = i + 1;
-			if (elemento>=max) { max = elemento; posmax = i; }
+			if (elemento>=max) {
+				max = elemento; 
+				posmax = i; }
 		}
 
 		////Soluzione 2
