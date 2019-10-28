@@ -2,9 +2,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
-// Scrivere in linguaggio C la parte di algoritmo per calcolare l’età media
-// degli studenti iscritti ai corsi di lingua inglese (supponendo di aver inizializzato
-// la variabile ScuolaLingue con le informazioni relative a 30 corsi).
+// Scrivere in linguaggio C la parte di 
+// algoritmo per calcolare l’età media
+// degli studenti iscritti ai corsi di 
+// lingua inglese (supponendo di aver inizializzato
+// la variabile ScuolaLingue con le 
+// informazioni relative a 30 corsi).
 
 
 #include <stdio.h> 
@@ -55,7 +58,7 @@ int main () {
 		if(strcmp(linIng,ScuolaLingue[i].lingua)==0){
 			for(j=0;j<ScuolaLingue[i].numiscritti;j++) {
 				cont++; // numero di studenti
-				somma+=ScuolaLingue[i].alunno[j].eta; //età totale
+				somma= 	somma+ScuolaLingue[i].alunno[j].eta; //età totale
 			}
 		}
 	}

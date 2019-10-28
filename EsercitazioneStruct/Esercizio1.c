@@ -1,11 +1,14 @@
-`#ifdef _MSC_VER
+#ifdef _MSC_VER
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
 //Scrivere un programma che svolga le seguenti operazioni: 
-// 1) Acquisisca informazioni relative a caratteristiche fisiche di 10 persone. 
-//    Ogni informazione è composta da peso, altezza ed età. 
-// 2) Terminata la fase di acquisizione, stampi sullo schermo le informazioni relative
+// 1) Acquisisca informazioni relative a caratteristiche
+// fisiche di 10 persone. 
+//    Ogni informazione è composta da peso,
+// altezza ed età. 
+// 2) Terminata la fase di acquisizione, stampi sullo schermo
+// le informazioni relative
 //   a tutte le persone per le quali il valore dell'età è <= 20. 
 
 #include <stdio.h> 
