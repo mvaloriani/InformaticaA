@@ -21,6 +21,7 @@ int main() {
 	for (i = 0; i < LUNG; i++) {
 		scanf("%d", &vett[i]);
 		sum = sum + vett[i];
+		
 	}
 
 	///* Somma gli elementi del vettore */

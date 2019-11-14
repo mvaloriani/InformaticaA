@@ -31,9 +31,11 @@ int maxArray(int *array, int n) {
 	int maxsub;
 	if (n == 1) return array[0];
 	if (n >= 2) {
-		maxsub = maxArray(&array[1], n - 1);
+		//maxsub = maxArray(&array[1], n - 1);
+		maxsub = maxArray(array+1, n - 1);
 		if (array[0] > maxsub)
-			return array[0];
+			//return array[0];
+			return *(array)
 		else
 			return maxsub;
 	}
@@ -53,18 +55,20 @@ int maxArray2(VETT array, int n) {
 	return -1;  /* non raggiungibile */
 }
 
-int maxArray3(VETT v, int n) {
+
+int maxArray3(VETT array, int n, int i) {
 	int maxsub;
-	if (n == 1) return v[0];
-	if (n >= 2) {
-		maxsub = maxArray3(&v[1], n - 1);
-		if (array[0] > maxsub)
-			return v[0];
+	if (i == n) return array[n];
+	else {
+		maxsub = maxArray2(array, n, i+1);
+		if (array[i] > maxsub)
+			return array[i];
 		else
 			return maxsub;
 	}
 	return -1;  /* non raggiungibile */
 }
+
 
 
 int main()
@@ -73,14 +77,14 @@ int main()
 
 	printf("\nMax = %d ", maxArray(test, len));
 	
-	/*
-	VETT v = { 2, 3, 9, 2, 13, 4, 34, 2, 9, 5 };
-	printf("\nMax = %d ", maxArray(v, len));
+	
+	//VETT v = { 2, 3, 9, 2, 13, 4, 34, 2, 9, 5 };
+	//printf("\nMax = %d ", maxArray(v, len));
 
-	printf("\nMax = %d ", maxArray2(test, len));
+	//printf("\nMax = %d ", maxArray2(test, len));
 
-	printf("\nMax = %d ", maxArray2(v, len));
-	*/
+	//printf("\nMax = %d ", maxArray2(v, len));
+	
 
 
 	system("pause");

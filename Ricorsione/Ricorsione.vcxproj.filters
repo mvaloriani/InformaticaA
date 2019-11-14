@@ -7,6 +7,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Esercizio9.cpp" />
+    <ClCompile Include="Esercizio1.cpp" />
   </ItemGroup>
 </Project>

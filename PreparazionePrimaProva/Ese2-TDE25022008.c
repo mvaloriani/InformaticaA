@@ -13,7 +13,7 @@ elementi ai bordi della matrice).
 const int N=5,M=3;
 
 int f(float m[N][M]) {
-  int i,j,k,t,cont,quanti=0;
+  int i,j,k,t,cont,quantiPicchi=0;
 
   //esploro la matrice
   for(i=0; i < N;i++) {
@@ -25,16 +25,24 @@ int f(float m[N][M]) {
 			for(t=j-1; t <= j+1;t++) {
 				// sono fuori dalla matrice
 				if(k < 0 || k >= N || t < 0 || t >= M) {
-					cont++;
+				cont++;
 				}
 				// condizione da verificare
 				else if(condPicco(m[i][j], m[k][t]))
 					cont++;
+
+				//// escludo i bordi
+				//if (!(k < 0 || k >= N || t < 0 || t >= M)) {
+				//if (k >= 0 && k < N && t >= 0 && t < M)) {
+
+				//	if (condPicco(m[i][j], m[k][t]))
+				//		cont++;
+				//}
 			}
 		}
 		//tutti gli elementi verificano la condizione
 		if(cont==8)
-			quanti++;	
+			quantiPicchi++;
 	}
     }
     return quanti;
@@ -52,6 +60,7 @@ int f1(float m[N][M]) {
 	}
 	return contPicchi;
 }
+
 int condVerificaPicco(int numR, int numC, float mat[][], int i, int j) {
 	int cont = 0;
 

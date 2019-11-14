@@ -32,13 +32,22 @@ int contaSMseMag3(int x, MATR m){
 					return 1;
 			}
 	}
-
-		return 0;
+	return 0;
 }
+
+
 int f(STR x, MATR m){
 	int i,s=0;
 	for(i=0;i<x.C;i++)
 		if(contaSMseMag3(x.V[i], m)==1)
 			s= s+ x.V[i];
+	return s;
+}
+
+int f2(STR* x, MATR m) {
+	int i, s = 0;
+	for (i = 0; i < (*x).C; i++)
+		if (contaSMseMag3(x->V[i], m) == 1)
+			s = s + x->V[i];
 	return s;
 }

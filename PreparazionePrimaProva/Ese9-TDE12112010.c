@@ -18,7 +18,7 @@ void f(int a[], int b[]){
 		// valuto la condizione
 		if(f1(a,i)==f2(a,i)){
 			//copio il valore e avanzo l'indice
-			b[j]=a[i];
+			b[j] = a[i]; // *(a+i);
 			j++;
 		}
 	}
