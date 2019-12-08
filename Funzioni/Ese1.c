@@ -20,7 +20,7 @@ typedef struct {
 } RES;
 
 // SOLUZIONE CON STRUTTURA RITORNATA
-RES ft3(VT  A) {
+RES ft3(VT A) {
 	int i, j;
 	RES temp;
 
@@ -32,7 +32,7 @@ RES ft3(VT  A) {
 }
 
 // SOLUZIONE SOLO PUNTATORI
-void ft2(VT  A, VT B, int *p) {
+void ft2(VT A, VT B, int *p) {
 	int i, j;
 	*p = 1;
 	for (i = 0; i < N; i++) {
@@ -42,7 +42,7 @@ void ft2(VT  A, VT B, int *p) {
 }
 
 // SOLUZIONE RETURN + VETTORI
-int ft(VT  A , VT B) {
+int ft(VT A[], VT B[N]) {
 	int i, j, prod = 1;
 	for (i = 0, j = N - 1; i<N; i++, j--) {
 		B[j] = A[i];
@@ -58,7 +58,8 @@ int ft(VT  A , VT B) {
 }
 
 int main() { 
-	VT v = { 2, -4, 8, 9, 12, 1, 6, -9, 5, 3 }, w;
+	VT v = { 2, -4, 8, 9, 12, 1, 6, -9, 5, 3 };
+	int w[N];
 	int j, res;
 	for (j = 0; j<10; j++)
 		printf("%d\n", v[j]);
