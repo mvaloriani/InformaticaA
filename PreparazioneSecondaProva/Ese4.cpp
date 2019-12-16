@@ -190,13 +190,5 @@ int spargidivisori2(Lista lista, int** mat, int dim){
 	return 1;
 }
 
-/*
-Questa soluzione è preferibile finchè il numero di valori da sostituire è minore della metà degli elementi
-*/
 
-{
-
-f(NULL, vet)
-
-}
 

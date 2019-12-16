@@ -12,7 +12,6 @@ l’operazione di lettura termina quando almeno uno dei due vettori è stato riempi
 inserisce in un file di testo denominato dati.txt i valori contenuti
 in P e D in modo alternato.
 
-
 */
 
 
@@ -37,12 +36,13 @@ int main()
 		}
 	} while (i < N && j < N);
 
-	if (i > j) {
-		max = i;
-	}
-	else {
-		max = j;
-	}
+	max = i > j ? i : j;
+	//if (i > j) {
+	//	max = i;
+	//}
+	//else {
+	//	max = j;
+	//}
 
 	fp = fopen("dati.txt", "w");
 	for (k = 0; k < max; k++) {

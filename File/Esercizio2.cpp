@@ -66,6 +66,7 @@ int main()
 
 
 typedef struct { int cont, contval, operazioneComppletata; } RET;
+
 RET F(int div, FILE *fileDestinazione, FILE *fileOrigine) {
 	RET valreturn;
 	int cont, contval, val;
@@ -75,22 +76,18 @@ RET F(int div, FILE *fileDestinazione, FILE *fileOrigine) {
 		return valreturn;
 	}
 
-
-
 	//scorro tutto il file
 	while (fscanf(fileOrigine, "%d", &val) != EOF) {
 		cont++;
 		//verifico se divisibile per 7
 		if (val % div == 0) {
 			contval++;
-			fprintf(fileOrigine, "%d\n", val);
+			fprintf(fileDestinazione, "%d\n", val);
 		}
 	}
 	valreturn.cont = cont;
 	valreturn.contval = contval;
 	valreturn.operazioneComppletata = 1;
 
-	fclose(fileDestinazione);
-	fclose(fileOrigine);
 	return valreturn;
 }

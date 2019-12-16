@@ -9,4 +9,7 @@
   <ItemGroup>
     <Text Include="dati.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Esercizio1.cpp" />
+  </ItemGroup>
 </Project>

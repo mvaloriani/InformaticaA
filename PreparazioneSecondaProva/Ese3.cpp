@@ -1,7 +1,8 @@
 /*
-La funzione … toro( … )  riceve come parametro un vettore di interi e 
-la specifica della sua dimensione, e alloca e restituisce una lista dinamica
-"circolare" di interi che contiene solo i valori del vettore positivi e 
+La funzione … toro( … ) riceve come parametro un vettore di interi
+e la specifica della sua dimensione, e alloca e restituisce
+una lista dinamica "circolare" di interi che contiene 
+solo i valori del vettore positivi e 
 divisibili per 11.
 Ovviamente la lista può essere circolare solo se non è vuota, 
 quindi si suggerisce di renderla
@@ -21,7 +22,6 @@ invece di avere un puntatore a NULL ha un puntatore alla testa].
 typedef struct lp { int  dato; struct lp * next; } Nodo;
 typedef Nodo* List;
 
-
 List buildNode(int word){
 
 	List lista;
@@ -31,32 +31,23 @@ List buildNode(int word){
 	return lista;
 }
 
-List toro(int* vet , int dim){
+List toro(int* vet , int dim){ //int vet[] ok //int vet[dim] errore
 	List first=NULL;
-	List prec=NULL;
+	List temp=NULL;
 
-	for (int i = 0; i < dim; i++)
-	{
-		if (vet[i]%11==0)
-		{
+	for (int i = 0; i < dim; i++)	{
+		if (vet[i]%11==0 && vet[i]>=0)		{
 			//primo elemento trovato
-			if (first==NULL)
-			{
+			if (first==NULL)			{
 				first=buildNode(vet[i]);
-				prec=first;
-			}
-			else
-			{
+				temp=first;			}
+			else			{
 				// aggiungo gli elementi successivi
-				prec->next=buildNode(vet[i]);
-				prec=prec->next;
-			}
+				temp->next=buildNode(vet[i]);
+				temp=temp->next;			}
 		}
-
 	}
-
-	prec->next=first;
-
+	temp->next=first;
 	return first;
 }
 

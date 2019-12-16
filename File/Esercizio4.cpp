@@ -72,7 +72,8 @@ int main() {
 	for (j = 0; j<indV; j++)
 		printf("%d\n", VETT[j]);
 
-	fclose(fA); fclose(fB);
+	fclose(fA); 
+	fclose(fB);
 
 
 	system("pause");

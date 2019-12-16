@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ese1.cpp" />
+    <ClCompile Include="Liste.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E8DBB708-8F5F-4FC3-9947-70AF530EB689}</ProjectGuid>
