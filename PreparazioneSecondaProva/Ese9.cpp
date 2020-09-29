@@ -6,6 +6,27 @@ typedef struct Intv { int da, a;
 struct Intv * next; } Intervallo;
 typedef Intervallo * Lista;
 
+
+
+void inverti(Lista prec, Lista cur){}
+void inverti(Intervallo* prec, Intervallo*cur) {}
+
+void invertiIn Lista(Lista prec) {
+	Lista temp = prec->next;
+	prec->next = prec->next->next;
+	temp->next = prec->next->next;
+	prec->next->next = temp;
+}
+Lista invertiInTesta Lista(Lista testa) {
+	Lista temp = testa->next;
+	testa->next = temp->next;
+	temp->next = testa;
+	return temp;
+}
+void inverti(Intervallo* prec) {}
+
+
+
 /*
 La struttura soprastante definisce una lista di intervalli
 definiti sui numeri interi. Si ritenga assicurato per costruzione
@@ -18,12 +39,7 @@ se due intervalli hanno almeno un punto in comune, 0 altrimenti
 //! ( i1.a < i2.da || i2.a < i1.da )    =    ( i1.a >= i2.da && i2.a >= i1.da )
 
 int sovrapposti( Intervallo i1, Intervallo i2 ) {
-
-	if ((i1.da <= i2.a && i2.a <= i1.a) || (i1.da <= i2.da && i2.da <= i1.a) ||
-		(i2.da <= i1.a && i1.a <= i2.a) || (i2.da <= i1.da && i1.da <= i2.a))
-		return 1;
-	return 0;
-
+	return  i1.da >= i2.a && i2.a <= i1.da;
 }
 
 /*b)	Si implementi in C la funzione fondi() che riceve in input due intervalli

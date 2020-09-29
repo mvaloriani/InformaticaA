@@ -1,9 +1,5 @@
 /*
-Il dispositivo di cronometraggio di una gara a tappe genera, 
-all’arrivo di ogni tappa, una lista dinamica con i numeri di maglia e i tempi di tappa 
-dei vari concorrenti. Un’altra lista conserva la classifica generale della gara, 
-con i numeri di maglia e il tempo totale di percorrenza. 
-I dati hanno la seguente struttura:typedef struct {  int ore;  int min;  int sec;  int cent; } Tempo;
+Il dispositivo di cronometraggio di una gara a tappe genera, all’arrivo di ogni tappa, una lista dinamica con i numeri di maglia e i tempi di tappa dei vari concorrenti. Un’altra lista conserva la classifica generale della gara, con i numeri di maglia e il tempo totale di percorrenza. I dati hanno la seguente struttura:typedef struct {  int ore;  int min;  int sec;  int cent; } Tempo;
 typedef struct Elem { int    concorrente;   Tempo  t_tappa;   struct Elem * next; } Arrivo;
 typedef Arrivo * Tappa;
 typedef struct Nodo { int concorrente; Tempo t_totale; struct Nodo *next; } Posizione;
@@ -71,18 +67,10 @@ long int cmp(Tempo t1, Tempo t2) {
 
 
 /*
-Supponendo di disporre di: (1) le funzioni di ordinamento Tappa ordTappaM( Tappa t )
-e Classifica ordClassM( Classifica c ), che ordinano le liste t e c in ordine crescente 
-di numero di maglia;
-(2) la funzione Classifica ordClassT( Classifica c ), che restituisce c ordinata in base al tempo totale
-crescente (campo t_totale); 
-(3) le funzioni definite al punto (a), si progetti la funzione … aggiorna(…) che
-aggiorna la classifica generale operando come segue:
-riceve come parametri la lista con gli arrivi dell’ultima tappa, così come è generata dal
-dispositivo di cronometraggio, e la lista che rappresenta la classifica generale;
+Supponendo di disporre di: (1) le funzioni di ordinamento Tappa ordTappaM( Tappa t ) e Classifica ordClassM( Classifica c ), che ordinano le liste t e c in ordine crescente di numero di maglia; (2) la funzione Classifica ordClassT( Classifica c ), che restituisce c ordinata in base al tempo totale crescente (campo t_totale); (3) le funzioni definite al punto (a), si progetti la funzione … aggiorna(…) che aggiorna la classifica generale operando come segue:
+riceve come parametri la lista con gli arrivi dell’ultima tappa, così come è generata dal dispositivo di cronometraggio, e la lista che rappresenta la classifica generale;
 aggiunge al tempo totale di ogni concorrente il tempo conseguito nell’ultima tappa;
-elimina dalla classifica generale, deallocandoli, gli eventuali concorrenti non arrivati in fondo
-alla tappa (ritirati), agendo direttamente sulla lista originale (si perdono, quindi, i loro dati);
+elimina dalla classifica generale, deallocandoli, gli eventuali concorrenti non arrivati in fondo alla tappa (ritirati), agendo direttamente sulla lista originale (si perdono, quindi, i loro dati);
 riordina la classifica generale in base ai nuovi tempi totali.
 Si definisca precisamente la funzione Classifica aggiorna( Tappa t, Classifica c )
 Suggerimento: conviene ordinare le liste in base allo stesso criterio per poi scandirle in parallelo.
@@ -94,32 +82,43 @@ Classifica ordClassM(Classifica c);
 Classifica ordClassT(Classifica c);
 
 Classifica aggiorna(Tappa t, Classifica c) {
-	Classifica cur, tmp, testa;
-
-	testa = c;
+	Classifica cur, tmp;
 
 	t = ordTappaM(t);
 	c = ordClassM(c);
 	cur = c;
 
-	while ( c !=NULL) { //elimino chi non è arrivato
-		if((c)->concorrente == t->concorrente ){
-			c->t_totale = sum(c->t_totale, t->t_tappa);
-
-
-			c = (c)->next;
-			t = t->next;
-
-		}
-		else
-		{
-			cur = c;
-			c = c->next;
-			free(cur);
-		}
-	
+	while ((c)->concorrente < t->concorrente) { //elimino chi non è arrivato
+		c = (c)->next;
+		free(cur);
+		cur = c;
 	}
 
-	return ordClassT(testa);
+	while (cur != NULL && t != NULL) {
+		if (cur->concorrente > t->concorrente) //maglia non presente in classifica
+		{
+			printf("Errore");  
+			exit(-1);
+		}
+		else if (cur->concorrente == t->concorrente) {
 
+			cur->t_totale = sum(cur->t_totale, t->t_tappa);
+			cur = cur->next;
+			t = t->next;
+		}
+		else { /* dealloco il nodo se il conc. non è arrivato  */
+			tmp = cur;
+			cur = cur->next;
+			free(tmp);
+		}
+	}
+
+	while (cur != NULL) {/* dealloco gli eventuali ultimi non arrivati   */
+		tmp = cur;
+		cur = cur->next;
+		free(tmp);
+	}
+
+	c = ordClassT(c);  /* La classifica è riordinata per tempo totale  */
+	return c;
 }

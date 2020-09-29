@@ -1,7 +1,14 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 //Scrivere un programma che svolga le seguenti operazioni: 
-// 1) Acquisisca informazioni relative a caratteristiche fisiche di 10 persone. 
-//    Ogni informazione è composta da peso, altezza ed età. 
-// 2) Terminata la fase di acquisizione, stampi sullo schermo le informazioni relative
+// 1) Acquisisca informazioni relative a caratteristiche
+// fisiche di 10 persone. 
+//    Ogni informazione è composta da peso,
+// altezza ed età. 
+// 2) Terminata la fase di acquisizione, stampi sullo schermo
+// le informazioni relative
 //   a tutte le persone per le quali il valore dell'età è <= 20. 
 
 #include <stdio.h> 
@@ -23,9 +30,12 @@ typedef struct {
 
 		// acquisizione
 		for(i=0;i<MAX_PERS;i++)  { 
-			printf("Altezza: "); scanf("%d", &(arch[i].alt)); 
-			printf("\nPeso: "); scanf("%d", &(arch[i].peso)); 
-			printf("\nEta': "); scanf("%d", &(arch[i].eta));
+			printf("Altezza: ");
+			scanf("%d", &arch[i].alt); 
+			printf("\nPeso: ");
+			scanf("%d", &(arch[i].peso)); 
+			printf("\nEta': ");
+			scanf("%d", &(arch[i].eta));
 		}
 
 

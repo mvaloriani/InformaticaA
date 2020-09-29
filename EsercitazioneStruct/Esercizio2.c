@@ -1,4 +1,9 @@
-//Modificare ora il programma precedente facendo in modo che gli elementi dell’array 
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
+//Modificare ora il programma precedente 
+//facendo in modo che gli elementi dell’array 
 // vengano ordinati in base all’età in ordine crescente 
 
 
@@ -11,9 +16,10 @@
 #define MAX_ETA 20 
 
 typedef struct { int peso; int alt; int eta; } dati; 
+
 int main() { 
 
-	dati arch[MAX_PERS],temp; 
+	dati arch[MAX_PERS], temp; 
 	int i, j; 
 
 	// lettura dati

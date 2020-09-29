@@ -1,12 +1,10 @@
 /*
-La matrice M[6][156] contiene le 156 estrazioni del 2010 dei 6 
-numeri del SuperEnalotto. 
+La matrice M[6][156] contiene le 156 estrazioni del 2010 dei 6 numeri del SuperEnalotto. 
 
 Scrivere una funzione 
 int f(int M[][156])
 
-che riceve la matrice M e restituisce quanti numeri
-tra 1 e 90 non sono mai usciti nel 2010.
+che riceve la matrice M e restituisce quanti numeri tra 1 e 90 non sono mai usciti nel 2010.
 
 */
 

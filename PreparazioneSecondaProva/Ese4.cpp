@@ -6,16 +6,24 @@
 /*
 
 Si codifichi in C la funzione … spargidivisori( … ), 
-che riceve come parametri una lista di interi e una matrice NxN di interi,
-tutti strettamente positivi. La funzione deve cercare di copiare ogni valore v
-della lista nella matrice, inserendolo al posto di un valore che sia multiplo di v.
-Se ci riesce, restituisce 1, e la matrice deve contenere tutti i valori modificati,
-se non ci riesce, però, oltre a restituire 0, deve lasciare inalterata la matrice.
+che riceve come parametri una lista di interi e 
+una matrice NxN di interi,
+tutti strettamente positivi. 
+La funzione deve cercare di copiare ogni valore v
+della lista nella matrice, inserendolo al posto di un valore 
+che sia multiplo di v.
+Se ci riesce, restituisce 1, e la matrice deve contenere tutti 
+i valori modificati,
+se non ci riesce, però, oltre a restituire 0, deve lasciare inalterata
+la matrice.
 Attenzione: 
-(1) i valori v devono sempre essere confrontati con la versione iniziale della matrice,
+(1) i valori v devono sempre essere confrontati con la 
+versione iniziale della matrice,
 non con le versioni "intermedie" derivanti dalla sostituzione di alcuni valori,
-(2) se ci sono più multipli di v, se ne può sostituire uno a piacere (il primo che si incontra),
-(3) si badi a definire chiaramente e/o dichiarare eventuali opportune strutture dati di appoggio
+(2) se ci sono più multipli di v, se ne può sostituire uno a piacere 
+(il primo che si incontra),
+(3) si badi a definire chiaramente e/o dichiarare eventuali 
+opportune strutture dati di appoggio
 o funzioni ausiliarie.
 
 */
@@ -49,6 +57,24 @@ bool insert(int mat[][N], int temp[][N], int v){
 	return false;
 }
 
+bool insert2(int mat[][N], int temp[][N], int temp2[][N], int v) {
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			//controllo se è un multiplo
+			if (mat[i][j] % v == 0) {
+				if (temp2[i][j] == 0) {
+					// inserisco nella matrice di supporto
+					temp[i][j] = v;
+					temp2[i][j] = 1;
+
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+
 int spargidivisori(Lista lista, int mat[N][N]){
 
 	// creo una matrice copia di supporto
@@ -58,6 +84,15 @@ int spargidivisori(Lista lista, int mat[N][N]){
 			temp[i][j]=mat[i][j];
 		}		
 	}
+	//// creo una secondamatrice copia di supporto
+	int temp2[N][N];
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			temp2[i][j] = 0;
+		}
+	}
+
+
 	// provo a inserire tutti i valori della lista
 	while (lista->next!=NULL)
 	{
@@ -74,8 +109,7 @@ int spargidivisori(Lista lista, int mat[N][N]){
 
 
 
-/* Questa versione è molto inefficiente perchè duplica una 
-matrice inutilmente e speca spazio
+/* Questa versione è molto inefficiente perchè duplica una matrice inutilmente e speca spazio
 vediamo una versione alternativa
 */
 
@@ -98,16 +132,26 @@ void deleteMyList(myList lista){
 	}
 }
 
-myList test(int** mat, int dim, int v){
+myList test(int** mat, int dim, int v, mylist lista){
 
 	for (int i = 0; i < dim; i++){
 		for (int j = 0; j < dim; j++){
-			if (mat[i][j]%v==0)	{
+			if (mat[i][j]%v==0 && giaInseriti(lista,i,j)){
 				return buildMyNode(v,i,j);
 			}
 		}
 	}
 	return NULL;
+}
+
+int giaInseriti(myList lista, int i, int j) {
+	if (lista != NULL && lista->i == i && lista->j == j)
+		return true;
+
+	if (lista->next != NULL) {
+		return giaInseriti(lista->next, i,j );
+	}
+	return false
 }
 
 int spargidivisori2(Lista lista, int** mat, int dim){
@@ -123,6 +167,7 @@ int spargidivisori2(Lista lista, int** mat, int dim){
 		prec->next=test(mat, dim, lista->dato);
 		//verifico se l'elemento è presente
 		if (prec->next==NULL){
+			deleteMyList(testa);
 			return 0;
 		}
 		// se la prima volta aggiorno la testa della lista
@@ -145,6 +190,5 @@ int spargidivisori2(Lista lista, int** mat, int dim){
 	return 1;
 }
 
-/*
-Questa soluzione è preferibile finchè il numero di valori da sostituire è minore della metà degli elementi
-*/
+
+

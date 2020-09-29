@@ -1,6 +1,13 @@
-// Scrivere in linguaggio C la parte di algoritmo per calcolare l’età media
-// degli studenti iscritti ai corsi di lingua inglese (supponendo di aver inizializzato
-// la variabile ScuolaLingue con le informazioni relative a 30 corsi).
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
+// Scrivere in linguaggio C la parte di 
+// algoritmo per calcolare l’età media
+// degli studenti iscritti ai corsi di 
+// lingua inglese (supponendo di aver inizializzato
+// la variabile ScuolaLingue con le 
+// informazioni relative a 30 corsi).
 
 
 #include <stdio.h> 
@@ -9,6 +16,7 @@
 
 #define maxclassi 5
 #define maxstud 30
+
 typedef struct { 
 	char nomestud[10];
 	char cognstud[10];
@@ -36,9 +44,10 @@ int main () {
 	int i,j,cont=0;
 	float somma=0;
 	char linIng[]="inglese";
+
 	/* stampo tutti gli alunni di tutte le classi con eta' */
 	for (i=0;i<maxclassi;i++)
-		for(j=0;j<maxstud;j++)
+		for(j=0;j<ScuolaLingue[i].numiscritti;j++)
 			printf("\n %s %s eta':%d", 
 			ScuolaLingue[i].alunno[j].nomestud,
 			ScuolaLingue[i].alunno[j].cognstud,
@@ -49,7 +58,7 @@ int main () {
 		if(strcmp(linIng,ScuolaLingue[i].lingua)==0){
 			for(j=0;j<ScuolaLingue[i].numiscritti;j++) {
 				cont++; // numero di studenti
-				somma+=ScuolaLingue[i].alunno[j].eta; //età totale
+				somma= 	somma+ScuolaLingue[i].alunno[j].eta; //età totale
 			}
 		}
 	}
@@ -57,7 +66,7 @@ int main () {
 	if (cont>0) 
 		printf("\nl'eta' media e':%f", somma/cont);
 	else 
-		printf("\nnessun corso di %s",linIng);
+		printf("\nnessun studente dei corsi di %s",linIng);
 
 	system("pause"); 
 	return 0;

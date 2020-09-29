@@ -1,16 +1,11 @@
 /*
-Si scriva una funzione che riceve in input due array di dimensione
-N (con N costante predefinita).
+Si scriva una funzione che riceve in input due array di dimensione N (con N costante predefinita).
 void f(int a[], int b[])
 
-Si definisce equibilatero un elemento di un vettore preceduto da 
-tanti numeri pari più grandi 
-<quanti> sono gli elementi dispari più piccoli che lo seguono. 
-La funzione f deve <copiare> tutti 
-gli <elementi equibilateri> di a in b in posizioni contigue 
-partendo dalla prima posizione di b 
-senza lasciare buchi. Le posizioni finali di b che restano 
-libere devono essere riempite di zeri.
+Si definisce equibilatero un elemento di un vettore preceduto da tanti numeri pari più grandi 
+quanti sono gli elementi dispari più piccoli che lo seguono. La funzione f deve copiare tutti 
+gli elementi equibilateri di a in b in posizioni contigue partendo dalla prima posizione di b 
+senza lasciare buchi. Le posizioni finali di b che restano libere devono essere riempite di zeri.
 */
 
 #include <stdio.h>
@@ -23,7 +18,7 @@ void f(int a[], int b[]){
 		// valuto la condizione
 		if(f1(a,i)==f2(a,i)){
 			//copio il valore e avanzo l'indice
-			b[j]=a[i];
+			b[j] = a[i]; // *(a+i);
 			j++;
 		}
 	}
