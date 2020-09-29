@@ -12,7 +12,7 @@ contenga anche due
 puntatori a carattere e due interi, 
 che rappresentino due parole p1 e p2 e due numeri
 di pagina n1 e n2 (le pagine in cui p1 e p2 rispettivamente
-compaiono per la prima volta nello stesso libro dell’esercizio 3).
+compaiono per la prima volta nello stesso libro dell’esercizio 5).
 
 */
 
@@ -24,6 +24,12 @@ typedef struct Gemma {
 typedef Nodo * Albero;  
 
 
+//Si codifichi la funzione ricorsiva di prototipo
+//int trovaPagina(Albero a, char * lemma);
+//che restituisce la pagina relativa alla parola lemma
+//se questa è nell’indice, oppure –1 se non è nell’indice,
+//badando ad attraversare in entrambi i casi solo la porzione
+//necessaria dell'albero.
 
 int trovaPagina( Albero a, char * lemma ) {
 	if ( a == NULL )
@@ -44,9 +50,7 @@ int trovaPagina( Albero a, char * lemma ) {
 	//	// lemma più grande di parola2
 	//	return trovaPagina(a->right, lemma);   
 
-	if (strcmp(lemma,a->parola2) > 0)
-		// lemma più grande di parola2
-		return trovaPagina(a->right, lemma);
+	`
 	return -1;
 }
 
