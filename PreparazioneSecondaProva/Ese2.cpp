@@ -1,12 +1,19 @@
 ﻿/*
 Due parole p e q si definiscono Hertzianamente compatibili (p  q)
 se entrambe sono leggibili anche “oscillando” e leggendo alternativamente
-i caratteri dell’una e dell’altra. La figura mostra che tigre  fiera e fiera  fresa.
+i caratteri dell’una e dell’altra. La figura mostra che 
+tigre  fiera e fiera  fresa.
+
 In figura parole uguali sono tracciate da linee di ugual stile.
-Si noti però che tigre /  fresa. Infatti  è (banalmente) simmetrica e riflessiva,
-ma non transitiva. Si noti anche che la relazione sussiste in due modi (diretto o inverso).
-In figura: fiera e tigre si leggono iniziando dalla stessa lettera (modo diretto), per fiera
-e fresa occorre iniziare dall’iniziale dell’ “altra” parola nella coppia (modo inverso). 
+Si noti però che tigre /  fresa. 
+Infatti  è (banalmente) simmetrica e riflessiva,
+ma non transitiva. Si noti anche che la relazione 
+sussiste in due modi (diretto o inverso).
+In figura: fiera e tigre si leggono iniziando dalla stessa 
+lettera (modo diretto), per fiera
+e fresa occorre iniziare dall’iniziale dell’ “altra” 
+parola nella coppia (modo inverso). 
+
 Se la relazione fosse definita solo in modo diretto o solo in modo inverso varrebbe anche
 la proprietà transitiva (esempio: aria, prua, erba, orma sono tutte direttamente 
 compatibili tra loro), ma consideriamo due parole compatibili indipendentemente dal modo in
@@ -65,12 +72,15 @@ int hercomlen( List lista ) {
 }
 
 
-/* (c)	Un albero di parole (definito come segue) si dice Hertzianamente percorribile
-se tutti i cammini che dalla radice portano alle foglie rappresentano sequenze di
-coppie di parole Herzianamente compatibili. Si codifichi la funzione ...hertree(...)
+/* (c)	Un albero di parole (definito come segue)
+si dice Hertzianamente percorribile
+se tutti i cammini che dalla radice portano alle foglie
+rappresentano sequenze di
+coppie di parole Herzianamente compatibili.
+Si codifichi la funzione ...hertree(...)
 che verifica se un albero gode della proprietà */
 
-typedef struct ap { 	char  * word;  	struct ap * left;	struct ap * right; } nodoAlbero;
+typedef struct ap { char  * word; struct ap * left;	struct ap * right; } nodoAlbero;
 typedef nodoAlbero * tree;
 
 /* Casi positivi
@@ -93,23 +103,26 @@ int hertree( tree t ) {
 	// valuto ricorsivamente l'albero di sinistra
 	if( ! hertree( t->left ) ) return 0;
 	// valuto ricorsivamente l'albero di destra
-	if (!hertree(t->right)) return 0;
-	// valuto ricorsivamente l'albero di destra
-	return 1;
+	return hertree( t->right );
 }
 
 
 
 /*
 (d)	In una lista, parole compatibili possono trovarsi anche distanti tra loro.
-Si può però provare, con una scansione della lista, a costruire un albero binario Hertzianamente
-percorribile:
-si inizia ponendo nella radice la prima parola della lista e si prosegue “appendendo” le parole che
-si incontrano via via nella lista a un qualsiasi nodo dell’abero che non abbia già due figli 
-e che contenga una parola compatibile. Si codifichi in C una funzione ...build(...) 
-che riceve una lista di parole, prova a costruire un albero Hertzianamente percorribile con una sola 
-scansione lineare della lista, e se riesce a collocare tutte le parole della lista restituisce l’albero costruito,
-altrimenti (se si trova una parola “non collocabile”) restituisce NULL e dealloca l’albero già costruito.
+Si può però provare, con una scansione della lista, a costruire un albero binario 
+Hertzianamente percorribile:
+si inizia ponendo nella radice la prima parola della lista e si prosegue 
+“appendendo” le parole che si incontrano via via nella lista a un 
+qualsiasi nodo dell’abero che non abbia già due figli 
+e che contenga una parola compatibile. 
+
+Si codifichi in C una funzione ...build(...) 
+che riceve una lista di parole, prova a costruire un albero Hertzianamente
+percorribile con una sola scansione lineare della lista,
+e se riesce a collocare tutte le parole della lista restituisce l’albero costruito,
+altrimenti (se si trova una parola “non collocabile”) restituisce NULL 
+e dealloca l’albero già costruito.
 */
 
 tree buildNode(char* word){

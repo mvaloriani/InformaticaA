@@ -1,3 +1,7 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 //Scrivere un programma che acquisisce una sequenza di caratteri terminata dal carattere 'invio' 
 //e stabilisce se la sequenza è palindroma oppure no (per esempio, "ada" è palindroma perché si legge allo stesso modo sia da destra sia da sinistra)
 

@@ -1,5 +1,10 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 /*
-Si scriva un programma C gestisce i dati di cantanti rappresentati con questa struttura dati:
+Si scriva un programma C gestisce i dati di cantanti rappresentati 
+con questa struttura dati:
 typedef struct {
 char cognome[N];
 char nome[N];
@@ -33,6 +38,7 @@ typedef struct {
 int main() {
 	int i, j, record_inseriti=0, operazione, uscita=4;
 	Tabella tabella[RIGHE], temp;//temp usato per ordinare
+	
 	do {
 		printf("Che operazione vuoi eseguire? ");
 		printf("\n\t 1. Inserisci nuovo record\n\t 2. Ordina record");
@@ -68,7 +74,7 @@ int main() {
 			printf("\nVettore ordinato secondo ordinamento decrescente dei dischi");
 			break;
 		case 3:
-			if(!record_inseriti)
+			if(record_inserit==0)
 				printf("\nNon sono presenti record all'interno della tabella.");
 			else {
 				printf("\n%s %s %s", "Nome", "Cognome", "Dischi");

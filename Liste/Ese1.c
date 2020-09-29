@@ -36,6 +36,7 @@ int cerca(Lista lista, char* line)
 		return 0;
 	else{
 		punt = lista;
+		
 		if (strcmp(punt->linea, line) == 0)
 			return 1;
 		else
@@ -43,7 +44,6 @@ int cerca(Lista lista, char* line)
 	}
 }
 
-//Nodo **lista
 void insTesta(Lista *lista, char * line) {     // Normale inserimento in
 	Lista tmp = *lista;                            // testa con assegnamento
 	*lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy

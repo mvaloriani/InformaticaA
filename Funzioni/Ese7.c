@@ -1,6 +1,8 @@
 /*
-Definire un tipo di dato MATR, matrice 10x10 di interi ed un tipo di dato EST, 
+Definire un tipo di dato MATR, 
+matrice 10x10 di interi ed un tipo di dato EST, 
 struct con un campo di nome X di tipo MATR e un campo L di tipo intero. 
+
 Scrivere una funzione in linguaggio C con due parametri formali: 
 A di tipo MATR e V di tipo puntatore ad un elemento di tipo EST.
 La funzione deve modificare l’area di memoria indirizzata da V 

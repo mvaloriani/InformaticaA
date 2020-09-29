@@ -1,15 +1,27 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 /*
-Si scriva un programma C che legga due serie di dati e li memorizzi in due vettori di strutture.
-Nel primo vettore M (di dimensione 3) vengono memorizzati dati del tipo: <matricola, nome, cognome>.
-Si noti che la matricola identifica univocamente uno studente e che non ci sono due strutture che 
+Si scriva un programma C che legga due serie di dati e 
+li memorizzi in due vettori di strutture.
+
+Nel primo vettore M (di dimensione 3) vengono memorizzati dati del tipo:
+<matricola, nome, cognome>.
+Si noti che la matricola identifica univocamente uno studente e
+che non ci sono due strutture che 
 contengono lo stesso numero di matricola. 
 
-Nel secondo vettore V (di dimensione 7) vengono memorizzati dati del tipo: <matricola, esame, voto>.
-Possono esserci più record con lo stesso numero di matricola che denotano diversi esami fatti dallo stesso studente.
+Nel secondo vettore V (di dimensione 7) vengono memorizzati dati del tipo:
+<matricola, esame, voto>.
+Possono esserci più record con lo stesso numero di matricola 
+che denotano diversi esami fatti dallo stesso studente.
 
-Si scriva un programma che tramite opportune procedure legga i dati in ingresso e li inserisca nei due vettori.
+Si scriva un programma che tramite opportune procedure 
+legga i dati in ingresso e li inserisca nei due vettori.
 
-Successivamente per ogni studente con matricola X contenuto nel vettore M sommi tutti i suoi voti ottenuti
+Successivamente per ogni studente con matricola X 
+contenuto nel vettore M sommi tutti i suoi voti ottenuti
 negli esami contenuti nel vettore V. 
 
 */
@@ -35,6 +47,7 @@ typedef struct {
 
 int main(){
 	int i, j, S=0, trovato;
+	
 	esami V[DIMV];
 	studente M[DIMM];
 
@@ -42,9 +55,13 @@ int main(){
 	for(i=0;i<DIMM;i++){
 		printf("Inserisci Matricola, Nome, Cognome\n");
 		scanf("%d",&M[i].matricola);
+		//scanf("%s",M[i].Nome);
+		//scanf("%s", M[i].Cognome);
+	
+
 		trovato=0;
 
-		for(j=0;j<i;j++){			
+		for(j=0;j<i && trovato==0;j++){			
 			// cerco eventuali duplicati
 			if(M[i].matricola==M[j].matricola) {
 				printf("Matricola doppia \n");

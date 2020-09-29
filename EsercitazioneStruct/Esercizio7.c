@@ -1,3 +1,7 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 /*
 Si scriva un programma C per la gestione di una scuola di ballo. 
 Ogni classe consiste di un insieme di persone e di due istruttori. 
@@ -26,6 +30,11 @@ typedef struct {
 	persona istruttori[2];
 	int nIscritti; 
 } classe;
+
+//typedef struct {	
+//	classe corsi[N];
+//	int nCorsi;
+//} scuola;
 
 int main(){
 	classe c;

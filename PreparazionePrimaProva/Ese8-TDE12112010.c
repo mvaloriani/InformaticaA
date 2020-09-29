@@ -16,8 +16,6 @@ in più funzioni.
 typedef int matrice[N][N];
 typedef matrice matmat[N][N];
 
-int i, j, cont , k = 0;
-
 int f(matmat m,int k){
 	int i,j,cont=0;
 

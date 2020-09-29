@@ -1,8 +1,14 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 //Scrivere un programma C che :
 //Legge una sequenza di numeri interi e quei numeri compresi tra 0 e 1023 
-//vengono memorizzati in un vettore di nome V.La lettura termina quando nel vettore sono stati inseriti 10 numeri
+//vengono memorizzati in un vettore di nome V.La lettura termina quando nel
+//vettore sono stati inseriti 10 numeri
 //Per ogni numero in V il programma esegue la conversione in binario, 
-//memorizza i resti ottenuti in un vettore R opportunamente dimensionato e stampa il contenuto di R
+//memorizza i resti ottenuti in un vettore R opportunamente dimensionato e
+//stampa il contenuto di R
 
 
 #define N 10

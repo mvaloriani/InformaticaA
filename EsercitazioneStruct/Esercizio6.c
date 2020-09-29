@@ -1,3 +1,7 @@
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 /*
 Si considerino le seguenti dichiarazioni di tipi e variabili,
 che definiscono le strutture dati per rappresentare dei rilevamenti
@@ -58,8 +62,7 @@ int main(){
 
 			// a dicembre è piovuto più della sogliaP
 			if ((dg[i].rilievi[j].mese==12) && (dg[i].rilievi[j].livelloP > sogliaP)){
-				trovato=1;
-				
+				trovato=1;			
 
 			}
 			//if(dg[i].rilievi[j].mese==12){
