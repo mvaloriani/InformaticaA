@@ -25,8 +25,9 @@ int main() {
 	printf("Inserire una serie di caratteri(# per finire)\n");
 	do {
 		scanf("%c", &car);
-		if (car >= 'a' && car <= 'z')
+		if (car >= 'a' && car <= 'z') {
 			contatore++;
+		}
 	} while (car != '#');
 	printf("Il numero delle lettere minuscole e' %d", contatore);
 	 

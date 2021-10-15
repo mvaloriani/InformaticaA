@@ -22,7 +22,7 @@ int main() {
 		scanf("%d", &N);
 	} while (N <= 0);
 	
-
+	//N^2 = N*N= N + N +...+ N
 	//Trovo il quadrato
 	for (i = 0; i < N; i++)
 	{

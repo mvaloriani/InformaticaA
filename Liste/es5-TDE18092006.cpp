@@ -9,6 +9,7 @@ di tipo Acronym e restituisce 1 se le iniziali delle parole della lista di
 parole corrispondono esattamente alle lettere della sigla, 0 altrimenti. 
 Si descriva brevemente (ma in modo preciso) un algoritmo per 
 implementarla e la si codifichi in C.
+
 ATTENZIONE:
 Gli acronimi possono essere sbagliati per diversi motivi. 
 Ecco tre esempi di acronimi sbagliati:
@@ -56,7 +57,9 @@ typedef AcroNode * AcroList;
 
 int acronimogiusto(Acronym a) {
 	int i = 0, lung = strlen(a.sigla);
+
 	WordList tmp = a.listaparole;
+
 	while (i < lung && tmp != NULL) {
 		if (a.sigla[i] != tmp->parola[0])
 			return 0;
@@ -83,6 +86,12 @@ void freeAcroList(AcroList list) {
 	if (list != NULL) {
 		AcroList tmp = list->next;
 		freeWordList((list->acronimo).listaparole);
+		//WordList tmp2 = (list->acronimo).listaparole;
+		//while (tmp2 != NULL) {
+		//	WordList tmp3 = tmp2;
+		//	tmp2 = tmp2->next;
+		//	free(tmp3);		
+		//}
 		free(list);    
 		freeAcroList(tmp);
 	}

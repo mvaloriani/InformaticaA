@@ -15,19 +15,21 @@ memorizza i resti ottenuti in un vettore R opportunamente dimensionato e stampa 
 #define MAXVAL 1023
 
 int main() {
-	int i=0,j,V[N],R[N];
-	do {  scanf("%d",&V[i]);
-	if (V[i]>=0 && V[i]<=MAXVAL)
-		i++;
-	} while(i<N); 
-	for(i=0;i<N;i++){
-		for(j=N-1;j>=0;j--){
-			R[j]=V[i]%2;
-			V[i]=V[i]/2;
+	int i = 0, j, V[N], R[N];
+	do {
+		scanf("%d", &V[i]);
+		if (V[i] >= 0 && V[i] <= MAXVAL)
+			i++;
+	} while (i < N);
+
+	for (i = 0; i < N; i++) {
+		for (j = N - 1; j >= 0; j--) {
+			R[j] = V[i] % 2;
+			V[i] = V[i] / 2;
 		}
-		for(j=0;j<N;j++)
-			printf("%d ",R[j]);
+		for (j = 0; j < N; j++)
+			printf("%d ", R[j]);
 		printf("\n");
-	}  
+	}
 	return 0;
 }

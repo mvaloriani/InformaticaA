@@ -19,12 +19,13 @@ typedef struct Guscio {
 typedef Nodo* Indice;
 
 /*
-(a)	Si implementi la funzione di prototipo void 
-scambiaPrimeParole( Indice * idx ); che “danneggia” l’indice
+(a)	Si implementi la funzione di prototipo 
+void scambiaPrimeParole(Indice * idx );
+che “danneggia” l’indice
 ordinato scambiando tra loro i primi due nodi (se presenti). 
 */
 
-void scambiaPrimeParole( Indice* idx ) {  
+void scambiaPrimeParole(Indice* idx ) {  
 	Indice temp;  
 	// ci sono meno di due nodi?
 	if ( *idx == NULL || (*idx)->next == NULL )  
@@ -41,7 +42,8 @@ void scambiaPrimeParole( Indice* idx ) {
 
 	temp = (*idx);
 	(*idx) = (*idx)->next;
-	temp->next = *idx->next;
+	temp->next = (*idx)->next;//= *idx->next !=  // *(idx->next).next == idx->next->next
+
 	(*idx)->next = temp;
 	return;
 	// avendo passato il puntatore al puntatore di testa non è necessario ritornare nulla 
@@ -51,7 +53,7 @@ void scambiaPrimeParole( Indice* idx ) {
 //(b)Si dica brevemente (ma in modo preciso) 
 //qual è l’effetto della funzione seguente
 
-void funzione( Indice idx ) {
+void funzione(Indice idx ) {
 	Indice idy = idx;
 	// eseguo solo se + di 2 elementi
 	if ( idy == NULL || idy->next == NULL )
@@ -120,7 +122,8 @@ Indice cleanup( Indice idx ) {
 		// violo una condizione
 		if (idx->parola==NULL||strlen(idx->parola)==0||idx->pagina<=0){
 			//salvo l'indice e poi avanzo
-			temp=idx;			
+			temp=idx;
+			idx = idx->next;
 			//libero la memoria del nodo corrotto
 			free(temp);
 		}
@@ -135,10 +138,9 @@ Indice cleanup( Indice idx ) {
 				// aggiorno la lista degli indici corretti
 				prec->next=idx;
 				prec=prec->next;
-			}				
+			}
+			idx = idx->next;
 		}
-		//avanzo la lista da controlare
-		idx = idx->next;
 	}
 	return testa;
 } // questa versine è molto efficiente se i nodi da ripulire è molto alta
@@ -174,7 +176,6 @@ Void cleanup(Indice* idx) {
 
 	}
 } // questa versine è molto efficiente se i nodi da ripulire è molto alta
-
 
 
 //variante ricorsiva

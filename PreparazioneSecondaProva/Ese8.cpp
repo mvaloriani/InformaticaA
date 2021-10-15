@@ -27,7 +27,20 @@ return t;
 Si codifichi in C la funzione inserisciOrd, badando ad allocare
 opportunamente i nodi per le parole non presenti nell'indice e incrementare
 il contatore delle occorrenze per le parole già presenti.
+
+casa
+amore
+dado
+zio
+armadio
+
+
+
 */
+
+
+
+
 
 Tree inserisciOrd( Tree t, char * p )
 {

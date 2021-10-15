@@ -13,6 +13,8 @@ Max=9 Pos=3
 
 */
 
+
+
 #include <stdio.h>   // inclusione libreria standard per I/O
 #include <stdlib.h>  // inclusione libreria standard per funzioni di sistema
 
@@ -36,15 +38,15 @@ int main() {
 		}
 
 		////Soluzione 2
-		//max = 0;
-		//i = 0;
-		//do
-		//{
-		//	printf("Inserire il primo valore:");
-		//	scanf("%d", &elemento);
-		//	i = i + 1;
-		//	if (elemento>max) { max = elemento; posmax = i; }
-		//} while (i<N);
+		max = 0; // uso il il piccolo degli int / inizializzo al primo ciclo
+		i = 0;
+		do
+		{
+			printf("Inserire un valore:");
+			scanf("%d", &elemento);
+			i = i + 1;
+			if (elemento>max) { max = elemento; posmax = i; }
+		} while (i<N);
 
 		printf("Il massimo e': %d\n", max);
 		printf("La posizione del massimo e': %d\n", posmax);

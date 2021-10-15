@@ -23,6 +23,7 @@ typedef struct {
 RES ft3(VT A) {
 	int i, j;
 	RES temp;
+	temp.p = 1;
 
 	for (i = 0; i < N; i++) {
 		temp.B[N - i - 1] = A[i];
@@ -34,28 +35,44 @@ RES ft3(VT A) {
 // SOLUZIONE SOLO PUNTATORI
 void ft2(VT A, VT B, int *p) {
 	int i, j;
-	*p = 1;
+	(*p) = 1;
 	for (i = 0; i < N; i++) {
 		B[N - i - 1] = A[i];
 		*p = (*p) * A[i];
 	}
+
+	return;
 }
 
 // SOLUZIONE RETURN + VETTORI
-int ft(VT A[], VT B[N]) {
-	int i, j, prod = 1;
-	for (i = 0, j = N - 1; i<N; i++, j--) {
-		B[j] = A[i];
-		prod = prod * A[i];
-	}
-	/*for (i = 0; i < N; i++) {
-		prod = prod * A[i];
-	}
+int ft(VT A, VT B) {
+	int i, prod = 1;
 	for (i = 0; i < N; i++) {
 		B[N - i - 1] = A[i];
-	}*/
+		prod = prod * A[i];
+	}
 	return prod;
 }
+
+
+//int ft(VT A, VT B) {
+//	int i, j, prod = 1;
+//	for (i = 0, j = N - 1; i<N; i++, j--) {
+//		B[j] = A[i];
+//		prod = prod * A[i];
+//	}
+//	/*for (i = 0; i < N; i++) {
+//		prod = prod * A[i];
+//	}
+//	for (i = 0; i < N; i++) {
+//		B[N - i - 1] = A[i];
+//	}*/
+//	return prod;
+//}
+
+
+
+
 
 int main() { 
 	VT v = { 2, -4, 8, 9, 12, 1, 6, -9, 5, 3 };
@@ -68,13 +85,13 @@ int main() {
 	//res = ft(v, w);
 	//res = ft(&v[0], &w[0]);
 
-	//ft2(v, w, &res);
-	//RES res3 = ft3(v);
+	ft2(v, w, &res);
+	RES res3 = ft3(v);
 
-	printf("prodotto: %d\n", res);
+	printf("prodotto: %d\n", res3.p);
 
 	printf("vettore invertito");
 	for (j = 0; j<10; j++)
-		printf("%d\n", w[j]);
+		printf("%d\n", res3.B[j]);
 	system("pause");  return 0;
 }

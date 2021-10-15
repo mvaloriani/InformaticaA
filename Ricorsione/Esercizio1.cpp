@@ -20,20 +20,23 @@ se N >1,  SN  = 2 * N + SN-1 (PASSO INDUTTIVO)
 #include <stdlib.h>  // inclusione libreria standard per funzioni di sistema
 
 int somma_pari(int N) {
+	int somma = 0;
 	if (N == 1)
 		return 2;
-	else
+	if (N > 1)
 		return 2 * N + somma_pari(N - 1);
+	return -1;
 }
 
-//int somma_pari2(int N) {
-//	int somma=0
-//	for (size_t i = 0; i < N; i++)
-//	{
-//		somma = somma + 2 * i;
-//	}
-//	return somma;
-//}
+
+int somma_pari2(int N) {
+	int somma = 0;
+	for (int i = 0; i < N; i++)
+	{
+		somma = somma + 2 * i;
+	}
+	return somma;
+}
 
 int main()
 {

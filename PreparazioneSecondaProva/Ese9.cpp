@@ -34,12 +34,19 @@ che da < a per ogni intervallo.
 
 (a)	Si implementi in C la funzione sovrapposti() che riceve in input due intervalli e restituisce 1 
 se due intervalli hanno almeno un punto in comune, 0 altrimenti 
+
+i1             6---9
+i2       5---8
+
 */ 
+
+
 
 //! ( i1.a < i2.da || i2.a < i1.da )    =    ( i1.a >= i2.da && i2.a >= i1.da )
 
 int sovrapposti( Intervallo i1, Intervallo i2 ) {
-	return  i1.da >= i2.a && i2.a <= i1.da;
+	//return !(i1.a < i2.da || i2.a < i1.da);
+	return  i1.da >= i2.a && i2.a >= i1.da;
 }
 
 /*b)	Si implementi in C la funzione fondi() che riceve in input due intervalli
@@ -47,12 +54,16 @@ int sovrapposti( Intervallo i1, Intervallo i2 ) {
 definito dall’unione dei due in input [2 punti]
 */
 
+//I due intervalli in input sono sovrapposti (per ipotesi),
+//costruiamo l’intervalllo che inizia dal minore
+//dei valori di “da” e termina nel maggiore dei valori di “a”.
+
 Intervallo fondi( Intervallo i1, Intervallo i2 ) {
 	if ( i1.da > i2.da )
 		i1.da = i2.da;
 	if ( i1.a < i2.a )
 		i1.a = i2.a;
-	i1.next = NULL;
+	i1.next = NULL; // riutilizziamo uno dei parametri formali. Il puntatore next è azzerato per cancellare l’eventuale riferimento.
 	return  i1;
 }
 
@@ -90,7 +101,8 @@ int inserisci(Lista lista, Intervallo inter){
 		temp= temp->next;
 	}
 	// non ho trovato elementi con cui sovrapporlo lo aggiungo
-	temp->next=buildNode(inter.da, inter.a);
+	if(n==0)
+		temp->next=buildNode(inter.da, inter.a);
 	return n;
 
 }
@@ -100,10 +112,13 @@ Lista coalesce(Lista lista){
 		return lista;
 	// prendo il primo e inizialiazzo la nuova lista
 	Lista listaMassimi;
-	int count=0;
+	int count;
 	do
 	{
+
 		listaMassimi = buildNode(lista->da, lista->a);
+		lista = lista->next;
+		count = 0;
 		while (lista->next!=NULL){
 			count=count+inserisci(listaMassimi, *lista);
 			lista=lista->next;		

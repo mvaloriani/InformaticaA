@@ -17,10 +17,10 @@ considerate.
 #include <stdio.h>   // inclusione libreria standard per I/O
 #include <stdlib.h>  // inclusione libreria standard per funzioni di sistema
 
-int f1(int a, int b) {
+int f1(int a, int b) {		
 	if (b == 0)
 		return 1;
-	return a * f1(a, b - 1);
+	return a * f1(a, b - 1);  
 
 	/*
 	b=0 1

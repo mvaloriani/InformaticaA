@@ -16,6 +16,7 @@ tutti i valori contenuti nel vettore (se presenti) e
 aggiunge in coda tutti i valori contenuti nel vettore e non nella lista originaria.
 Si definisca opportunamente il prototipo della funzione incrocia()
 e si descriva sinteticamente (ma in modo preciso) come opera un algoritmo che la implementa.
+
 In particolare, si badi a evitare che un valore presente nella lista
 e non nel vettore sia prima aggiunto e poi rimosso (o viceversa)
 Si codifichi poi in C la funzione secondo l’algoritmo precedentemente dettagliato
@@ -66,8 +67,8 @@ void incrocia(Lista * lis, int * v, int lun) {
 				if (!found) {   /* Ins. in coda, se !trovato */
 					prec->next = (Lista)malloc(sizeof(Nodo));
 
-					/*			temp->dato = v[i];
-								temp->next = NULL;*/
+					/*	temp->dato = v[i];
+						temp->next = NULL;*/
 
 					prec->next->dato = v[i];
 					prec->next->next = NULL;
@@ -87,15 +88,15 @@ Lista incrocia(Lista lis, int * v, int lun) {
 	if (lun == 0)
 		return lis;
 	if (VerificaPresenza(lis, v[0]))
-		lis = Cancella(lis, v[0]);	else
+		lis = Cancella(lis, v[0]);	
+	else
 		lis = InsInFondo(lis, v[0]);
 	//lis = VerificaPresenza(lis, v[0]) ? Cancella(lis, v[0]) : InsInFondo(lis, v[0]);
 
 	if (lun == 1)
 		return lis;
 
-	lis = incrocia(lis, &v[1], lun - 1);
-	return lis;
+	return incrocia(lis, &v[1], lun - 1);
 }
 
 Lista incrocia(Lista lis, int * v, int lun) {
@@ -133,8 +134,8 @@ Lista InsInFondo(Lista lista, int elem) {
 	Lista punt, cur = lista;
 
 	punt = (Lista)malloc(sizeof(Nodo));
-	punt– > next = NULL;
-	punt– > dato = elem;
+	punt–> next = NULL;
+	punt–> dato = elem;
 
 	if (lista == NULL)
 		return  punt;
@@ -146,21 +147,12 @@ Lista InsInFondo(Lista lista, int elem) {
 	return lista;
 }
 
-int VerificaPresenza(Lista lista, int elem) {
+bool VerificaPresenza(Lista lista, int elem) {
 	if (lista == NULL)
-		return 0;
-	if (lista– > dato == elem)
-		return 1;
-
-	return VerificaPresenza(lista– > next, elem);
-}
-
-int VerificaPresenza(Lista lista, int elem) {
-	if (lista == NULL)
-		return 0;
-	if (lista– > dato == elem)
-		return 1;
-
+		return false;
+	if (lista–> dato == elem)
+		return true;
+	
 	return VerificaPresenza(lista–> next, elem);
 }
 
@@ -175,18 +167,21 @@ Lista VerificaPresenza2(Lista lista, int elem) {
 	return VerificaPresenza(lista–> next, elem);
 }
 
+
+
+
 int Trova(Lista lista, int elem) {
 	if (lista == NULL)
 		return 0;
-	if (Condizie(lista–> dato, elem))
+	if (Condizie(lista–>dato, elem))
 		return 1;
 
-	return VerificaPresenza(lista– > next, elem);
+	return Trova(lista–> next, elem);
 }
 
 bool condizione(int dato, int elem)
 {
-	if()	
+	if(dato==elem)//qualsiasi condizione	
 		return 0;
 	else 
 		return 1;
@@ -196,13 +191,13 @@ bool condizione(int dato, int elem)
 Lista Cancella(Lista lista, int elem) {
 	Lista puntTemp;
 	if (lista != NULL)
-		if (lista– > dato == elem) {
+		if (lista–> dato == elem) {
 			puntTemp = lista– > next;
 			free(lista);
 			return puntTemp;
 		}
 		else
-			lista– > next = Cancella(lista– > next, elem);
+			lista–> next = Cancella(lista–> next, elem);
 	return lista;
 }
 
@@ -226,7 +221,7 @@ void print(Lista list) {
 	}
 }
 
-void print(Lista list) {
+void printRIC(Lista list) {
 	Lista temp = list;
 
 	if (temp == NULL)

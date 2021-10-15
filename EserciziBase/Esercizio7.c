@@ -28,6 +28,15 @@ int main() {
 			&& (valore % 2) == 0 
 			&& (num%valore) == 0)
 			cont++;
+
+		if (valore != 0) {
+			if (valore % 2 == 0) {
+				if (num % valore == 0) {
+					cont++;
+				}
+			}
+		}
+
 	} while (valore != 0);
 
 	printf("I valori pari divisori di %d sono %d", num, cont);

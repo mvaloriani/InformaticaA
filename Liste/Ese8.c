@@ -47,12 +47,22 @@ int cerca(Lista lista, char* line)
 	}
 }
 
+//void insTest(Nodo** lista, char * line)
 void insTesta(Lista *lista, char * line) {     // Normale inserimento in
 	Lista tmp = *lista;                            // testa con assegnamento
 	*lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy
 	strcpy((*lista)->linea, line);
 	(*lista)->next = tmp;
 }
+
+Lista insTesta2(Lista lista, char * line) {     // Normale inserimento in
+	Lista tmp = lista;                            // testa con assegnamento
+	lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy
+	strcpy(lista->linea, line);
+	lista->next = tmp;
+	retun lista;
+}
+
 
 void deleteMyList(Lista lista){
 	if (lista != NULL){
@@ -109,7 +119,7 @@ void scrivifile(Lista lista, File * fp) {
 int main() {
 	FILE * fp;
 	char buffer[256];		            // max 255 caratteri + 1 per il '\0'
-	Lista lis = NULL, tmp;
+	Lista lis = NULL, tmp = NULL;
 
 	if ((fp = fopen("input.txt", "r")) == NULL)  // Selezione linee da tenere
 		return -1;
@@ -117,6 +127,7 @@ int main() {
 	while (fgets(buffer, 256, fp) != NULL){
 		if (strlen(buffer) >= 10 && strlen(buffer) <= 20)
 			insTesta(&lis, buffer);
+		    //lis = insTesta(lis, buffer);
 	}
 	fclose(fp);
 

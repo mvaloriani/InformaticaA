@@ -67,7 +67,7 @@ int main(){
 		if (selezionato == true) {
 
 			personeScelte[iPersoneScelte] = persone[iPersone];
-			personeScelte++;
+			iPersoneScelte++;
 			selezionato = false;
 		}
 

@@ -12,7 +12,9 @@ positivo N può essere costruito sommando tra loro i
 primi N numeri dispari.
 Esempio: N = 5;  N2 = 1 + 3 + 5 + 7 + 9 = 25.
 
-
+D0 = 1
+D1 = D1+2
+D2 = D3 + 2 = 1 +2 +2 = 1 + 2i
 */
 
 #include <stdio.h>   // inclusione libreria standard per I/O
@@ -29,7 +31,7 @@ int main() {
 	i = 0;
 	while (i < N) {
 		S = S + (i + i + 1);
-		i++;
+		i++; //	i = i + 1;
 	}
 
 	////Varianti
@@ -41,7 +43,7 @@ int main() {
 
 	////oppure
 	//i = 1;
-	//while (i < N) {
+	//while (i < 2*N) {
 	//	if (i % 2 != 0)
 	//		S = S + (i);
 	//	i++;
@@ -49,13 +51,13 @@ int main() {
 
 	////oppure
 	//i = 1;
-	//while (i < N + N) {
+	//while (i < N) {
 	//	S = S + i;
 	//	i = i + 2;
 	//}
 
 	////oppure
-	//for (i = 1; i < 2*N; i=i+2)
+	//for (i = 1; i < N; i=i+2)
 	//{
 	//	S = S + i;
 	//}

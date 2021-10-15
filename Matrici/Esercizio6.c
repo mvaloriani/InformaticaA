@@ -11,7 +11,7 @@ int main () {
 	printf("Inserisci la prima stringa:\n"); 
 	scanf("%s",str1);
 	printf("Inserisci la seconda stringa:\n"); 
-	scanf("%s",str2);
+	scanf("%s",&str2[0]);
 	//copio la prima stringa
 	for (i=0;str1[i]!='\0';i++)
 		strTot[i]=str1[i];

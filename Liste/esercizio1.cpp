@@ -37,7 +37,7 @@ int somma(ELEMENTO *Testa, int M) {
 
 	while (Testa != NULL) {
 		if (Testa->dato%M == 0)
-			sum = sum + Testa->dato;
+			sum = sum + Testa->dato; //(*Testa).dato
 
 		Testa = Testa->next;
 	}

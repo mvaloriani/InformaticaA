@@ -24,10 +24,9 @@ int main() {
 	while (i <= quanti) {
 		elem = elem1 + elem3;
 		printf(" %d", elem);
-		elem3 = elem2;		
+		elem3 = elem2;
 		elem2 = elem1;
 		elem1 = elem;
-	
 		i++;
 	}
 	printf("\n");
@@ -36,15 +35,36 @@ int main() {
 	for (i = 0; i < quanti; i++)
 	{
 		if (i < 3) {
-			printf("%d ", 1);
-			continue;
+			printf("1 ");
+			//continue;
+			//break;
 		}
-		elem = elem1 + elem3;
-		printf("%d ", elem);
-		elem3 = elem2;
-		elem2 = elem1;
-		elem1 = elem;
+		else {
+			elem = elem1 + elem3;
+			printf("%d ", elem);
+			elem3 = elem2;
+			elem2 = elem1;
+			elem1 = elem;
+		}
 	}
+
+	elem1 = 1, elem2 = 1, elem3 = 1, elem;
+	i = 0;
+	do
+	{
+		if (i < 3) {
+			printf("1");
+		}
+		else {
+			elem = elem1 + elem3;
+			printf("%d ", elem);
+			elem3 = elem2;
+			elem2 = elem1;
+			elem1 = elem;
+		}
+		i++;
+	} while (i < quanti);
+
 
 	printf("\n");
 	system("pause");

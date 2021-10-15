@@ -43,18 +43,18 @@ typedef struct {
 typedef struct Elem {
 	int    concorrente;
 	Tempo  t_tappa;
-	struct Elem * next;
+	struct Elem* next;
 } Arrivo;
 
-typedef Arrivo * Tappa;
+typedef Arrivo* Tappa;
 
 typedef struct Nodo {
 	int concorrente;
 	Tempo t_totale;
-	struct Nodo *next;
+	struct Nodo* next;
 } Posizione;
 
-typedef Posizione * Classifica;
+typedef Posizione* Classifica;
 
 
 long int TempoCent(Tempo t) {
@@ -114,10 +114,10 @@ Classifica ordClassM(Classifica c);
 Classifica ordClassT(Classifica c);
 
 Classifica aggiorna(Tappa t, Classifica c) {
-	Classifica cur, tmp;
+	Classifica cur, prev, tmp;
 
-	t = ordTappaM(t);
-	c = ordClassM(c);
+	t = ordTappaM(t);     // 3 5 6 7 8 10
+	c = ordClassM(c);	  // 3 4 5 6 7 8 9 10 11
 	cur = c;
 	prev = NULL;
 
@@ -126,15 +126,20 @@ Classifica aggiorna(Tappa t, Classifica c) {
 		free(cur);
 		cur = c;
 	}
+	//								   t
+	// 3		5		6 7 8		10| 
+	// 3		5		6 7 8		10|		11 12
+	// c							prev	   cur
 
-	while (cur != NULL && t != NULL) {
+	while (cur != NULL && t!=NULL) {
 		if (cur->concorrente > t->concorrente) //maglia non presente in classifica
-		{
+		{ 	// 3 5 6 7 8 10
+			// 4 5 6 7 8 9 10 11
 			printf("Errore");
 			exit(-1);
 		}
-		else if (cur->concorrente == t->concorrente) {
-
+		
+		if (cur->concorrente == t->concorrente) {
 			cur->t_totale = sum(cur->t_totale, t->t_tappa);
 			prev = cur;
 			cur = cur->next;
@@ -146,6 +151,7 @@ Classifica aggiorna(Tappa t, Classifica c) {
 			free(tmp);
 			prev->next = cur;
 		}
+
 	}
 
 	while (cur != NULL) {/* dealloco gli eventuali ultimi non arrivati   */
@@ -154,6 +160,38 @@ Classifica aggiorna(Tappa t, Classifica c) {
 		free(tmp);
 	}
 
+	prev->next = NULL;
+
 	c = ordClassT(c);  /* La classifica è riordinata per tempo totale  */
 	return c;
 }
+
+
+void spampaClassifica(Classifica c) {
+	if (c == NULL) return;
+
+	printf("%d",c->concorrente);
+	spampaClassifica(c->next);
+}
+
+Classifica ultimoInClassifica(Classifica c) {
+	if (c->next == NULL) return c;
+
+	return ultimoInClassifica(c->next);
+}
+
+//Classifica cancellaElemento(Classifica prev, Classifica daCancellare) {
+//	Classifica tmp;
+//	tmp = daCancellare;
+//	daCancellare = daCancellare->next;
+//	free(tmp);
+//	prev->next = daCancellare;
+//}
+//
+//Classifica cancellaElemento(Classifica prev) {
+//	Classifica tmp, daCancellare = prev->next;
+//	tmp = daCancellare;
+//	daCancellare = daCancellare->next;
+//	free(tmp);
+//	prev->next = daCancellare;
+//}

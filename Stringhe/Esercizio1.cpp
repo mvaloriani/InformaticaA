@@ -29,13 +29,16 @@ int main() {
 	/* i rappresenta il numero di caratteri copiati da str1 a strTot */
 	for (j = 0; str2[j] != '\0'; j++) /* accodo str2 a str1 */
 		strTot[i + j] = str2[j];
+
 	strTot[i + j] = '\0';
 
-	//////alternativa
-	////strTot[0] = '\0';
+	////alternativa
+	//strTot[0] = '\0';
 	////strcat(strTot, str1);
 	//strcpy(strTot, str1);
 	//strcat(strTot, str2);
+
+	////strcat(str1, str2);
 
 	printf("\n%s\n", strTot);
 

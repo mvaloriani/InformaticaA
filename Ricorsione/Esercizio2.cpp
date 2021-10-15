@@ -27,28 +27,29 @@ sotto-vettore che che va da array[1] a array[N] (lungo N-1).
 #define len 10
 typedef	int VETT[10];
 
-int maxArray(int *array, int n) {
+int maxArray(int* arr, int n) {
 	int maxsub;
-	if (n == 1) return array[0];
+	if (n == 1) return arr[0];//*arr
 	if (n >= 2) {
-		//maxsub = maxArray(&array[1], n - 1);
-		maxsub = maxArray(array+1, n - 1);
-		if (array[0] > maxsub)
-			//return array[0];
-			return *(array)
+		//maxsub = maxArray(&arr[1], n - 1);
+		maxsub = maxArray(arr +1, n - 1);
+		if (arr[0] > maxsub)
+			//return arr[0];
+			return *arr;
 		else
 			return maxsub;
 	}
+	printf("errore nei parametri di ingresso");
 	return -1;  /* non raggiungibile */
 }
 
-int maxArray2(VETT array, int n) {
+int maxArray2(VETT arr, int n) {
 	int maxsub;
-	if (n == 1) return array[0];
+	if (n == 1) return arr[0];
 	if (n >= 2) {
-		maxsub = maxArray2(&array[1], n - 1);
-		if (array[0] > maxsub)
-			return array[0];
+		maxsub = maxArray2(&arr[1], n - 1);
+		if (arr[0] > maxsub)
+			return arr[0];
 		else
 			return maxsub;
 	}
@@ -78,10 +79,10 @@ int main()
 	printf("\nMax = %d ", maxArray(test, len));
 	
 	
-	//VETT v = { 2, 3, 9, 2, 13, 4, 34, 2, 9, 5 };
-	//printf("\nMax = %d ", maxArray(v, len));
+	VETT v = { 2, 3, 9, 2, 13, 4, 34, 2, 9, 5 };
+	printf("\nMax = %d ", maxArray(v, len));
 
-	//printf("\nMax = %d ", maxArray2(test, len));
+	printf("\nMax = %d ", maxArray2(test, len));
 
 	//printf("\nMax = %d ", maxArray2(v, len));
 	
