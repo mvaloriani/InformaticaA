@@ -60,7 +60,7 @@ Lista insTesta2(Lista lista, char * line) {     // Normale inserimento in
 	lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy
 	strcpy(lista->linea, line);
 	lista->next = tmp;
-	retun lista;
+	return lista;
 }
 
 
@@ -80,7 +80,6 @@ void inCodaRicorsivo(Lista lista, char * line){
 		lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy
 		strcpy((lista)->linea, line);
 	}
-
 }
 
 Lista ins_coda(Lista lista, char * line)
@@ -106,14 +105,14 @@ Lista ins_coda(Lista lista, char * line)
 	return lista;
 }
 
-void scrivifile(Lista lista, File * fp) {
+void scrivifile(Lista lista, FILE * fp) {
 	if (lista != NULL) {
 		scrivifile(lista->next, fp);
 	}
 	else {
 		return;
 	}
-	fputs(lis->linea, fp);
+	fputs(lista->linea, fp);
 }
 
 int main() {

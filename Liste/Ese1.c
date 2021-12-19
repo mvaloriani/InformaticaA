@@ -31,19 +31,17 @@ int lista_vuota(Lista lista)
 
 int cerca(Lista lista, char* line)
 {
-	Nodo* punt;
 	if (lista_vuota(lista))//definita qui
 		return 0;
 	else{
-		punt = lista;
 		
-		if (strcmp(punt->linea, line) == 0)
+		if (strcmp(lista->linea, line) == 0)
 			return 1;
 		else
-			cerca(punt->next, line);
+			cerca(lista->next, line);
 	}
 }
-
+				//  **Nodo
 void insTesta(Lista *lista, char * line) {     // Normale inserimento in
 	Lista tmp = *lista;                            // testa con assegnamento
 	*lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy
@@ -59,17 +57,14 @@ void deleteMyList(Lista lista){
 }
 
 void inCodaRicorsivo(Lista lista, char * line){
-	if (lista != NULL){
+	if (lista->next != NULL){
 		inCodaRicorsivo(lista->next, line);
 	}
 	else
 	{
-		lista = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy
+		lista->next = (Lista)malloc(sizeof(Nodo));         // del "dato" con strcpy
 		strcpy((lista)->linea, line);
 	}
-
-
-
 }
 
 Lista ins_coda(Lista lista, char * line)

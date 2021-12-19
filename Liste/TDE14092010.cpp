@@ -9,16 +9,13 @@ Si codifichi in C la funzione checkin
 
 AC723YU 7.6
 DR731TS 2.3
-DR731TS
-
-
 */
 
 #include <stdio.h> 
 #include <string.h>
 #include <stdlib.h>
 
-int checkin(char * targa) {
+int checkin(char* targa) {
 	FILE * f;
 	char plaque[8];
 	float credit;
@@ -29,6 +26,17 @@ int checkin(char * targa) {
 			fclose(f);
 			return 1;
 		}
+		//if (strcmp(targa, plaque) == 0) {
+		//	if (credit >= 2.50) {
+		//		fclose(f);
+		//		return 1;
+		//	}
+		//	else {
+		//		fclose(f);
+		//		return 0;
+		//	}
+		//}
+
 	}
 	fclose(f);
 	return 0;
@@ -94,6 +102,7 @@ int assegnapianoI(ListaDiListe L, char * targa) {
 	}
 	if (L == NULL)
 		return -1;
+
 	L->macchine = instesta(L->macchine, targa);
 	(L->postiliberi)--;
 	return p;
@@ -115,7 +124,6 @@ void instesta(Lista* L, char * targa) {
 	strcpy(punt->targa, targa);
 	punt->next = *L;
 	L = punt;
-
 }
 
 
@@ -144,7 +152,6 @@ int assegnapiano(ListaDiListe L, char * targa) {
 	p = assegnapiano(L->next, targa)
 		if (p < 0) return -1;
 		else return p + 1;
-
 }
 
 
@@ -207,6 +214,7 @@ void checkout(ListaDiListe L, char * targa) {
 	if (find(L->macchine, targa) == 1) {
 		L->macchine = remove(L->macchine, targa);
 		(L->postiliberi)++;
+		return;
 	}
 	else
 		checkout(L->next, targa);
