@@ -23,51 +23,50 @@ typedef Nodo* Lista;
 
 void stampaMax(Lista A, int x) {
 
-    bubbleSort(A);
-    int i = 0;
+	bubbleSort(A);
+	int i = 0;
 
-    while (i<x || A==NULL)
-    {
-        printf("%d \n", A->data);
-        i++;
-        A = A->next;
-    }
+	while (i < x || A != NULL)
+	{
+		printf("%d \n", A->data);
+		i++;
+		A = A->next;
+	}
 }
 
 
 /* Bubble sort the given linked list */
 void bubbleSort(Node* start)
 {
-    int swapped, i;
-    struct Node* ptr1;
-    struct Node* lptr = NULL;
+	int swapped, i;
+	struct Node* ptr1;
+	struct Node* lptr = NULL;
 
-    /* Checking for empty list */
-    if (start == NULL)
-        return;
+	/* Checking for empty list */
+	if (start == NULL)
+		return;
 
-    do
-    {
-        swapped = 0;
-        ptr1 = start;
+	do {
+		swapped = 0;
+		ptr1 = start;
 
-        while (ptr1->next != lptr)
-        {
-            if (ptr1->data < ptr1->next->data)
-            {
-                swap(ptr1, ptr1->next);
-                swapped = 1;
-            }
-            ptr1 = ptr1->next;
-        }
-        lptr = ptr1;
-    } while (swapped);
+		while (ptr1->next != lptr) {
+			if (ptr1->data < ptr1->next->data)
+			{
+				swap(ptr1, ptr1->next);
+				swapped = 1;
+			}
+			ptr1 = ptr1->next;
+		}
+		lptr = ptr1;
+	} while (swapped);
+	//} while (lptr!=start);
 }
 
 /* function to swap data of two nodes a and b*/
-void swap(struct Node* a, struct Node* b)
+void swap(Node* a, Node* b)
 {
-    int temp = a->data;
-    a->data = b->data;
-    b->data = temp;
+	float temp = a->data;
+	a->data = b->data;
+	b->data = temp;
 }

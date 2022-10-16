@@ -10,9 +10,11 @@ Esempi:
 AGGTCATTCG
 TCCAGTAAGC
 sono compatibili
+
 Mentre
 AGGTCATTCG
 TCCCGGAAGC
+
 non lo sono a cause delle non corrispondenze evidenziate in grassetto.
 Si codifichi in C una funzione  int compatibili(char * S1, char * S2) che riceve le
 due catene di un DNA e restituisce 1 se sono compatibili, 0 altrimenti.
@@ -23,13 +25,19 @@ due catene di un DNA e restituisce 1 se sono compatibili, 0 altrimenti.
 #include <string.h>
 #include <stdlib.h>
 
-int valido(char* S1, char* S2) {
-	if ((*S1 == 'A' && *S2 == 'T') || (*S2 == 'T' && *S2 == 'A') ||
-		(*S1 == 'G' && *S2 == 'C') || (*S2 == 'C' && *S2 == 'T'))
+int valido(char* C1, char* C2) {
+	if ((*C1 == 'A' && *C2 == 'T') || (*C1 == 'T' && *C2 == 'A') ||
+		(*C1 == 'G' && *C2 == 'C') || (*C1 == 'C' && *C2 == 'G'))
 		return 1;
 	return 0;
 }
 
+int valido2(char C1, char C2) {
+	if ((C1 == 'A' && C2 == 'T') || (C1 == 'T' && C2 == 'A') ||
+		(C1 == 'G' && C2 == 'C') || (C1 == 'C' && C2 == 'G'))
+		return 1;
+	return 0;
+}
 
 int compatibili(char* S1, char* S2) {
 
@@ -45,6 +53,5 @@ int compatibili(char* S1, char* S2) {
 			return 0;
 	}
 	return 1;
-
 }
 

@@ -15,22 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="20170912-cosa scrive.cpp">
+    <ClCompile Include="20190124-Liste.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="20170912-Array.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="20170912-Liste.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="20170912-Alberi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="20150305-stringhe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="20150305-Albero.cpp">
+    <ClCompile Include="20190124-Matrici.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

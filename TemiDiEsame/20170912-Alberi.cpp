@@ -1,7 +1,6 @@
 /*
-
 Esercizio  6  ( 4 punti )
-Si consideri la seguente definizione di un albero ternario:
+Si consideri la seguente definizione di un albero binario:
 */
 
 #define N 100
@@ -22,18 +21,16 @@ e che restituisce il numero di nodi di T che contengono un vettore che è una per
 #include <string.h>
 #include <stdlib.h>
 
+
 int f(tree T, int V[]) {
 
-	int L = 0, R = 0;
-
-	if (T == NULL) 
+	if (T == NULL)
 		return 0;
 
-	if (T->left == NULL && T->right == NULL) 
+	if (T->left == NULL && T->right == NULL)
 		return permutazione(V, T->dati);
 
-	return permutazione(V, T->dati) + f(T->left, V) + f(T->right, V);
-
+	return permutazione(T->dati, V) + f(T->left, V) + f(T->right, V);
 }
 
 int permutazione(int A[], int B[]) {
@@ -41,20 +38,50 @@ int permutazione(int A[], int B[]) {
 	int Temp[N];
 	int t = 0;
 
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = 0; j < N; j++)
-		{
+	// A = 012355
+	// B = 512435
+	// T = 100001
+
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N && t == 0; j++) {
 			if (A[i] == B[j] && Temp[j] != 1) {
 				Temp[j] = 1;
 				t = 1;
-				break;
+				//break;
 			}
 		}
-
 		if (t == 0) return 0;
 		t = 0;
 	}
+	return 1;
+}
 
+int permutazione2(int A[], int B[]) {
+
+	int countA;
+	int j, i;
+
+	// A = 012355
+	// B = 512430
+	// T = 100001
+
+	for (i = 0; i < N; i++) {
+	
+		countA = 0;
+		for (j = 0; j < N; j++)
+		{
+			if (A[i] == A[j])
+				countA++;
+		}
+
+		for (j = 0; j < N; j++)
+		{
+			if (A[i] == B[j])
+				contA--;
+		}
+
+		if (count != 0)
+			return 0;
+	}
 	return 1;
 }

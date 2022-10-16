@@ -23,24 +23,35 @@ verranno stampati i valori
 
 void stampaMax(float A[N], int x) {
 
-    bubbleSort(A, N);
-    for (int i = 0; i < x; i++)
-    {
-        printf(" % f \n", A[N - i]);
-    }
+	bubbleSort(A, N);
+	for (int i = 0; i < x; i++) {
+		printf(" % f \n", A[N - i - 1]);
+	}
 }
 
 void bubbleSort(float arr[], int n) {
-    int i, j;
-    for (i = 0; i < n - 1; i++)
-
-        for (j = 0; j < n - i - 1; j++)
-            if (arr[j] > arr[j + 1])
-                swap(&arr[j], &arr[j + 1]);
+	int i, j;
+	for (i = 0; i < n - 1; i++)
+		for (j = 0; j < n - i - 1; j++)
+			if (arr[j] > arr[j + 1])
+				swap(&arr[j], &arr[j + 1]);
 }
 
+void bubbleSort2(float arr[], int n) {
+	int i, j, swapped = 1;
+	for (i = 0; i < n - 1 && swapped == 1; i++) {
+		swapped = 0;
+		for (j = 0; j < n - i - 1; j++)
+			if (arr[j] > arr[j + 1]) {
+				swap(&arr[j], &arr[j + 1]);
+				swapped = 1;
+			}
+	}
+}
+
+
 void swap(float* a, float* b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+	float temp = *a;
+	*a = *b;
+	*b = temp;
 }

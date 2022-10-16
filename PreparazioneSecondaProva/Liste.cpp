@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 typedef struct Node { int dato; struct Node * next; } Nodo;
-typedef Nodo * Lista;
+typedef Nodo* Lista;
 
 // Costruisci NODO
 Lista buildNode(int word) {

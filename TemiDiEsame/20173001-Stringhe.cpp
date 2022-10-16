@@ -49,8 +49,16 @@ int pulizia(char* parola, char* elimina) {
 
 		if (temp == eliminaLen) {
 			count++;
+			// parola= mmassrreeeff
+			// ELIMINA = mare
+			// indexes = 0257
+
 			for (int i = 0; i < eliminaLen; i++){
 				RemoveChar(parola, indexes[i] - i);
+				// parola= massrreeeff
+				// parola= mssrreeeff
+				// parola= mssreeeff
+				// parola= mssreeff
 			}
 		}
 	}while(temp==eliminaLen)
@@ -59,6 +67,10 @@ int pulizia(char* parola, char* elimina) {
 
 }
 
+
+// maserteerrr
+// mare
+// 0146
 int findIndexs(char* parola, char* elimina, int* indexes) {
 
 	int count = 0;
@@ -66,7 +78,7 @@ int findIndexs(char* parola, char* elimina, int* indexes) {
 
 	while (parola[i] != '\0' || elimina[j] != '\0')
 	{
-		if (parola[i] == parola[j]) {
+		if (parola[i] == elimina[j]) {
 			count++;
 			indexes[j] = i;
 			j++
@@ -78,6 +90,9 @@ int findIndexs(char* parola, char* elimina, int* indexes) {
 
 }
 
+// s= ciao\0
+// index= 2
+// s = cio\0
 
 void RemoveChar(char* s, int index)
 {
