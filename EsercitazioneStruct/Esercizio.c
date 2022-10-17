@@ -4,7 +4,8 @@
 
 /*
 Definire tipi di dato per un PRA:
-Il tipo dati Motoveicolo rappresenta i dati di un motoveicolo. Questi dati si compongono di:
+Il tipo dati Motoveicolo rappresenta i dati di un motoveicolo.
+Questi dati si compongono di:
 -targa del motoveicolo (7 lettere)
 -marca del motoveicolo (massimo 15 caratteri),
 -modello (massimo  20  caratteri),
@@ -37,12 +38,15 @@ typedef struct {
 
 
 /*
-Il tipo dati Proprietario  rappresenta  i  dati  di  una  persona  (il  proprietario  del motoveicolo):
+Il tipo dati Proprietario  rappresenta  i  dati  di  una  persona
+(il  proprietario  del motoveicolo):
 nome  (massimo 30  caratteri),
 cognome (massimo 40 caratteri),
 codice  fiscale (16 caratteri).
-Il tipo dati VocePRA  rappresenta  una  singola  voce  nel  registro  automobilistico;
-una  voce  si compone  di  2  elementi: i  dati  del  proprietario  del motoveicolo  ed  i  dati  del motoveicolo stesso.
+Il tipo dati VocePRA  rappresenta  una  singola  voce  nel  registro
+automobilistico;
+una  voce  si compone  di  2  elementi: i  dati  del  proprietario
+del motoveicolo  ed  i  dati  del motoveicolo stesso.
 
 */
 
@@ -74,41 +78,52 @@ typedef struct {
 
 /*
 
-Scrivere un programma che estrare l’automobilista con l’auto con cilindrata maggiore
+Scrivere un programma che estrare l’automobilista con l’auto
+con cilindrata maggiore
 
-Scrivere un programma che estrare l’automobilista con la somma delle cilindrate delle sue auto maggiore
+Scrivere un programma che estrare l’automobilista con la somma
+delle cilindrate delle sue auto maggiore
 
 */
 
-PRA p; int maxcc = 0; int i,j,k; int currentcc = 0; int loStesso = 0;
-Proprietario pr;
+
 
 int main() {
+	PRA p; int maxcc = 0; int i, j, k; int currentcc = 0; int loStesso = 0;
+	Proprietario pr;
 
-	for (i = 0; i < p.n_elementi; i++) {
+	for (i = 0; i < p.n_elementi; i++) {		
 		if (p.elementi[i].motoveicolo.cilindrata > maxcc) {
 			maxcc = p.elementi[i].motoveicolo.cilindrata;
 			pr = p.elementi[i].proprietario;
 		}
+	}
 
-		for (i = 0; i < p.n_elementi; i++) {
-			currentcc = 0;
-			for (j = 0; j < p.n_elementi; j++) {
+	for (i = 0; i < p.n_elementi; i++) {
+		currentcc = 0;
+		// trovo la somma delle cilindrate per un Utente X
+		for (j = 0; j < p.n_elementi; j++) {
 
-				//if(p.elementi[i].proprietario==p.elementi[j].proprietario)
+			//if(p.elementi[i].proprietario==p.elementi[j].proprietario)
 
-				loStesso = 1;
-				for (k = 0; k < 16 && loStesso == 1; k++) {
-					if (p.elementi[i].proprietario.codice_fiscale[k] != p.elementi[j].proprietario.codice_fiscale[k]) {
-						loStesso = 0;
-					}
+			loStesso = 1;
+			for (k = 0; k < 16 && loStesso == 1; k++) {
+				if (p.elementi[i].proprietario.codice_fiscale[k] !=
+					p.elementi[j].proprietario.codice_fiscale[k]) {
+					loStesso = 0;
 				}
-				if (loStesso == 1) // non è mai diventato 0, quindi nessuna cifra del codice fiscale è diversa
-					currentcc += p.elementi[j].motoveicolo.cilindrata;
 			}
-			if (currentcc > maxcc) {
-				maxcc = currentcc;
-				pr = p.elementi[i].proprietario;
-			}
+			/*if(strcmp(p.elementi[i].proprietario.codice_fiscale,
+			p.elementi[j].proprietario.codice_fiscale)==0)*/
+
+			if (loStesso == 1) // non è mai diventato 0, quindi nessuna cifra del codice fiscale è diversa
+				currentcc += p.elementi[j].motoveicolo.cilindrata;
+
+		}
+		
+		if (currentcc > maxcc) {
+			maxcc = currentcc;
+			pr = p.elementi[i].proprietario;
 		}
 	}
+}
