@@ -1,9 +1,6 @@
 /*
 Definito il tipo punto
-typedef struct {int x; 
-int y;
-int NMonete; 
-} punto;
+typedef struct {int x; int y; int NMonete;  } punto;
 scrivere una funzione che riceve in input una matrice M di punti 
 di dimensione N*N e due coordinate x, y.
 La funzione deve navigare la matrice, partendo dal punto indicato dalle
@@ -36,7 +33,12 @@ int caccia(punto M[N][N], int x, int y) {
 		M2[x][y]=1;
 		//sommo le monete
 		totale=totale+M[x][y].NMonete;
-		// aggiorno le coordinate
+		// aggiorno le coordinate		
+		
+		/*punto temp = M[x][y];
+		x = temp.x;
+		y = temp.y;*/
+
 		aux=M[x][y].x;
 		y=M[x][y].y;
 		x=aux;

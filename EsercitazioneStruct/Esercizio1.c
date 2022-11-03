@@ -38,8 +38,6 @@ typedef struct {
 			scanf("%d", &(arch[i].eta));
 		}
 
-
-
 		// stapa persone con età<=max
 		printf("\n persone con eta' <= %d", MAX_ETA);
 		for (i=0; i<MAX_PERS; i++) {

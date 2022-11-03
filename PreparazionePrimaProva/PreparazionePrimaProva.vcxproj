@@ -10,6 +10,9 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ese4-TDE14112008.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B6318A50-CD12-40E4-81FF-13DFECFBE8E9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

@@ -29,7 +29,7 @@ int contaSMseMag3(int x, MATR m){
 			if (m[i][j] != 0 && x%m[i][j] == 0) {
 				cont++;
 				if (cont >= 3)
-					return 1;
+					return 1;				
 			}
 	}
 	return 0;
@@ -38,12 +38,11 @@ int contaSMseMag3(int x, MATR m){
 
 int f(STR x, MATR m){
 	int i,s=0;
-	for(i=0;i<x.C;i++)
+	for(i=0;i<x.C;i++)			
 		if(contaSMseMag3(x.V[i], m)==1)
 			s= s+ x.V[i];
 	return s;
 }
-
 int f2(STR* x, MATR m) {
 	int i, s = 0;
 	for (i = 0; i < (*x).C; i++)

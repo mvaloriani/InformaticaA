@@ -86,8 +86,6 @@ delle cilindrate delle sue auto maggiore
 
 */
 
-
-
 int main() {
 	PRA p; int maxcc = 0; int i, j, k; int currentcc = 0; int loStesso = 0;
 	Proprietario pr;
@@ -105,7 +103,7 @@ int main() {
 		for (j = 0; j < p.n_elementi; j++) {
 
 			//if(p.elementi[i].proprietario==p.elementi[j].proprietario)
-
+			
 			loStesso = 1;
 			for (k = 0; k < 16 && loStesso == 1; k++) {
 				if (p.elementi[i].proprietario.codice_fiscale[k] !=
@@ -113,11 +111,16 @@ int main() {
 					loStesso = 0;
 				}
 			}
-			/*if(strcmp(p.elementi[i].proprietario.codice_fiscale,
-			p.elementi[j].proprietario.codice_fiscale)==0)*/
-
 			if (loStesso == 1) // non è mai diventato 0, quindi nessuna cifra del codice fiscale è diversa
 				currentcc += p.elementi[j].motoveicolo.cilindrata;
+
+
+			/*
+			if(strcmp(p.elementi[i].proprietario.codice_fiscale,
+				p.elementi[j].proprietario.codice_fiscale)==0){
+				currentcc += p.elementi[j].motoveicolo.cilindrata;
+				}
+			*/
 
 		}
 		

@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Esercizio1.c" />
-    <ClCompile Include="Maialini.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AD0CCEA5-EB25-4F1D-9366-9FABE208AD66}</ProjectGuid>

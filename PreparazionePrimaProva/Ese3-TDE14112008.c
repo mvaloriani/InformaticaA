@@ -20,8 +20,11 @@ Parola 5: riga 1, colonna 3 verticale orizzontale
 Parola 6: riga 2, colonna 0 orizzontale
 Parola 7: riga 3, colonna 3 orizzontale
 
-Per l'implementazione si realizzi e si faccia uso di una funzione con il seguente prototipo
-int iniziaParola(int m[][C], int r, int c, Direzione d);
+Per l'implementazione si realizzi e si faccia uso di una funzione 
+con il seguente prototipo
+
+int iniziaParola(char m[][C], int r, int c, int d);
+
 che controlli se alla riga r e colonna c inizi una parola di almeno due
 lettere nella matrice m lungo la direzione d (orizzontale se d è 0, verticale altrimenti). 
 Si noti che una parola inizia in una certa casella se è preceduta, lungo la direzione considerata,
@@ -33,8 +36,8 @@ o da una casella nera o dal bordo del puzzle.
 #include <stdio.h>
 #define R 4
 #define C 5
-#define Orizzontale 0
-#define Verticale 1
+#define Orizzontale 3
+#define Verticale 5
 
 #include <stdio.h>
 
@@ -48,6 +51,7 @@ int main() {
 			parolaVert=iniziaParola(m, r, c, Verticale);	//
 			//---------------------------------------------//
 			if (parolaVert || parolaOriz) {
+
 				printf("Parola %d: riga %d, colonna %d", ++n, r, c);
 				if(parolaVert)
 					printf(" verticale");
@@ -64,8 +68,16 @@ int iniziaParola(char m[R][C], int r, int c, int d) {
 	switch(d) {
 	case Orizzontale:
 		// sono sul bordo o prima c'è una casella nera
-		if (c-1<0 || m[r][c-1]=='*')
-			return c+1<C && m[r][c+1]!='*';
+		if (c - 1 < 0 || m[r][c - 1] == '*')
+			return c + 1 < C && m[r][c + 1] != '*';
+
+		//if ((c - 1 < 0 || m[r][c - 1] == '*') &&
+		//	(c + 1 < C && m[r][c + 1] != '*'))
+		//	return 1;
+
+		/*if (c + 1 < C && m[r][c + 1] != '*')
+			return 1;*/
+
 		return 0;
 	case Verticale:
 		if (r-1<0 || m[r-1][c]=='*') {
@@ -75,5 +87,35 @@ int iniziaParola(char m[R][C], int r, int c, int d) {
 	default: 
 		return 0;
 	}
+
+	/*
+	switch (d)	{
+	case 1:
+		//...
+		break;
+	case 2:
+		//...
+		break;
+	case 10:
+	case 11:
+		//...
+		break;
+	default:
+		break;
+	}
+
+	if (d == 1) {
+		//...
+	}
+	else if (d == 2) {
+		//...
+	}
+	else if (d == 10 || d == 11) {
+		//...
+	}else{
+		//....
+	}
+	*/
 }
+
 

@@ -19,7 +19,8 @@ typedef struct { int peso; int alt; int eta; } dati;
 
 int main() { 
 
-	dati arch[MAX_PERS], temp; 
+	dati arch[MAX_PERS];
+	dati temp;
 	int i, j; 
 
 	// lettura dati
@@ -50,7 +51,6 @@ int main() {
 		{
 			printf("\n %d, %d, %d", arch[i].alt, arch[i].peso, arch[i].eta); 
 		}
-
 		//else{
 		//	break;
 		//}
