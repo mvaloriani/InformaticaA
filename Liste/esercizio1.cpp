@@ -39,7 +39,7 @@ int somma(ELEMENTO *Testa, int M) {
 		if (Testa->dato%M == 0)
 			sum = sum + Testa->dato; //(*Testa).dato
 
-		Testa = Testa->next;
+		Testa = Testa->next;//(*(*Testa).next).next
 	}
 	return sum;
 }

@@ -1,10 +1,12 @@
 /*
 Sia data la seguente struttura per la memorizzazione 
 di alberi binari etichettati con numeri interi:
+
 typedef struct nodo {
 int info;
 struct nodo *left, *right;
 } NODO;
+
 typedef NODO *tree;
 Si devono scrivere due funzioni ricorsive
 int sommaNodi(tree t);

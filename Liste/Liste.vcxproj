@@ -10,6 +10,11 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Esercizio4-TDE09062009.cpp" />
+    <ClCompile Include="Esercizio4.c" />
+    <ClCompile Include="Esercizio5.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{772371DC-2BEF-4E8F-975A-0D84275A5649}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

@@ -23,7 +23,9 @@ nodo * max(lista lis) {
 	}
 	if (lis->prox == NULL)
 		return lis;
+	
 	e = max(lis->prox);
+	
 	if (e->valore < lis->valore)
 		return lis;
 	else
