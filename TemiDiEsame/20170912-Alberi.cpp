@@ -11,9 +11,11 @@ typedef struct ET {
 typedef treeNode* tree;
 
 /*
-Si codifichi in C la seguente funzione che riceve un albero T e un vettore V di dimensione N
+Si codifichi in C la seguente funzione che riceve un albero T e
+un vettore V di dimensione N
 int f(tree T, int V[])
-e che restituisce il numero di nodi di T che contengono un vettore che è una permutazione di V
+e che restituisce il numero di nodi di T 
+che contengono un vettore che è una permutazione di V
 */
 
 
@@ -39,8 +41,8 @@ int permutazione(int A[], int B[]) {
 	int t = 0;
 
 	// A = 012355
-	// B = 512435
-	// T = 100001
+	// B = 512034
+	// T = 111110
 
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N && t == 0; j++) {
@@ -80,7 +82,7 @@ int permutazione2(int A[], int B[]) {
 				contA--;
 		}
 
-		if (count != 0)
+		if (countA != 0)
 			return 0;
 	}
 	return 1;
