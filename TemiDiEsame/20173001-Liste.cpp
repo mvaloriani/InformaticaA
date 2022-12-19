@@ -68,6 +68,7 @@ Statistiche calcola(Visite V) {
 Statistiche Trova(Statistiche lista, char* link) {
 	if (lista == NULL)
 		return NULL;
+
 	if (strcmp(lista->link, link)==0)
 		return lista;
 

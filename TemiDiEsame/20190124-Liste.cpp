@@ -2,15 +2,19 @@
 Si definisca un tipo di dato atto a contenere una lista di studenti
 con i campi numero di matricola, nome, cognome e voto all’esame di “Informatica A”.
 
-Si implementi quindi la funzione eliminaStudente che rimuove da una lista definita
-come sopra tutti gli studenti che hanno conseguito un punteggio all’esame minore di 18.
+Si implementi quindi la funzione eliminaStudente
+che rimuove da una lista definita
+come sopra tutti gli studenti che hanno 
+conseguito un punteggio all’esame minore di 18.
 
 Si implementi quindi la funzione listaDiStudendiPerVoto che riceve una
 lista definita come sopra e restituisce una lista di liste di studenti
 composta da sottoliste costruite dividendo gli studenti per voto ottenuto.
 Avremo quindi la sottolista degli studenti che hanno preso 18,
-quella degli studenti che hanno preso 19, e così via fino alla lista degli studenti
-che hanno preso 30 (per semplicità non si consideri il “30 e Lode” e si immagini
+quella degli studenti che hanno preso 19,
+e così via fino alla lista degli studenti
+che hanno preso 30 (per semplicità non si consideri il “30 e Lode” 
+e si immagini
 non esistano voti mai assegnati).
 */
 

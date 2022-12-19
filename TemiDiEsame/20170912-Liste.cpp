@@ -1,9 +1,13 @@
 /*sercizio  5  (12 punti)
-Si scriva un sottoprogramma che ricevuto in ingresso una lista L di float
-ed un valore intero N, ed un valore intero X, stampa a video i valori che
-costituiscono gli X massimi valori contenuti nella lista L in ordine decrescente.
+Si scriva un sottoprogramma che ricevuto in ingresso una
+lista L di float
+ed un valore intero N, ed un valore intero X, 
+stampa a video i valori che
+costituiscono gli X massimi valori contenuti nella lista L 
+in ordine decrescente.
 
-Ad esempio, se il sottoprogramma riceve in ingresso la lista seguente ed il valore X = 3
+Ad esempio, se il sottoprogramma riceve in ingresso la lista 
+seguente ed il valore X = 3
 
 10 2 3 23 101
 
@@ -59,14 +63,5 @@ void bubbleSort(Node* start)
 			ptr1 = ptr1->next;
 		}
 		lptr = ptr1;
-	} while (swapped);
-	//} while (lptr!=start);
-}
-
-/* function to swap data of two nodes a and b*/
-void swap(Node* a, Node* b)
-{
-	float temp = a->data;
-	a->data = b->data;
-	b->data = temp;
-}
+	} while (swapped==1);
+	//} while (lptr
