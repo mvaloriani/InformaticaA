@@ -40,6 +40,10 @@ int main()
 			}
 		}
 	}
+
+	//if(a<b && b<c) printf("\n L'ordine voluto e': %d, %d, %d\n", a, b, c);
+	//if (a < b && c< b && a<c) printf("\n L'ordine voluto e': %d, %d, %d\n", a, c,b );
+
 	else {
 		if (c < b) { printf("\n L'ordine voluto e': %d, %d, %d\n", c, b, a); }
 		else {

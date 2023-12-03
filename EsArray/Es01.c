@@ -20,8 +20,7 @@ int main() {
 	printf("Inserire un vettore di interi di dimensione %d\n", LUNG);
 	for (i = 0; i < LUNG; i++) {
 		scanf("%d", &vett[i]);
-		sum = sum + vett[i];
-		
+		sum = sum + vett[i];		
 	}
 
 	///* Somma gli elementi del vettore */

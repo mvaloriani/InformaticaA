@@ -10,26 +10,24 @@
 
 
 
-
-
 #include <stdio.h> 
 
 #define LUNG 5 
 int main() {
 	int vett[LUNG], i, temp;
 
-	///Soluzione 1
-	///*usata per scambiare due elementi del vettore */
-	//printf("Inserire un vettore di interi di dimensione %d\n", LUNG);
-	//for (i = 0; i < LUNG; i++)
-	//	scanf("%d", &vett[i]);
-	//   
-	///* Inverti il vettore senza l'utilizzo di un vettore ausiliario */
-	//for (i = 0; i < LUNG / 2; i++) {
-	//	temp = vett[i];
-	//	vett[i] = vett[LUNG - 1 - i];
-	//	vett[LUNG - 1 - i] = temp;
-	//}
+	Soluzione 1
+	/*usata per scambiare due elementi del vettore */
+	printf("Inserire un vettore di interi di dimensione %d\n", LUNG);
+	for (i = 0; i < LUNG; i++)
+		scanf("%d", &vett[i]);
+	   
+	/* Inverti il vettore senza l'utilizzo di un vettore ausiliario */
+	for (i = 0; i < LUNG / 2; i++) {
+		temp = vett[i];
+		vett[i] = vett[LUNG - 1 - i];
+		vett[LUNG - 1 - i] = temp;
+	}
 
 	////Alternativa 1
 	//for (i = 0; i < LUNG; i++)

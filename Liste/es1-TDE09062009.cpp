@@ -9,8 +9,6 @@ typedef Nodo * Lista;
 void fun(Lista lis1, Lista lis2) {
 	if (lis1 == NULL)
 		return;
-
-
 	else if (lis1->next != NULL)
 		fun(lis1->next, lis2);
 	else

@@ -18,10 +18,13 @@
     <ClCompile Include="Esercizio4-TDE09062009.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Esercizio4.c">
+    <ClCompile Include="Esercizio4-5.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Esercizio5.c">
+    <ClCompile Include="Esercizio 5 - tde 10-9-2008.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Esercizio 3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

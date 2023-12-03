@@ -25,17 +25,17 @@ int main() {
 		scanf("%d", &v[i]);
 
 
-	/*while (i<n && continuo)
-	{
-		scanf("%c", &input);
-		if (input != 'C') {
-			scanf("%d", &v[i]);
-			t= i++;
-			
-		}
-		else
-			continuo=false;
-	}*/
+	//while (i<n && continuo)
+	//{
+	//	scanf("%c", &input);
+	//	if (input != 'C') {
+	//		scanf("%d", &v[i]);
+	//		t= i++;
+	//		
+	//	}
+	//	else
+	//		continuo=false;
+	//}
 
 	// Soluzione con piu cicli
 	for (i = 0; (i < n - 1); i++) {
@@ -49,13 +49,13 @@ int main() {
 	}
 
 	//// soluzione ottima   
-	//for (i = 0; (i < n - 1) && si!=0 ; i++) {
-	//	for (j = i + 1; j < n && si != 0; j++) {
-	//		if (v[i] == v[j]) {
-	//			si = 0;				
-	//		}
-	//	}
-	//}
+	for (i = 0; (i < n - 1) && si!=0 ; i++) {
+		for (j = i + 1; j < n && si != 0; j++) {
+			if (v[i] == v[j]) {
+				si = 0;				
+			}
+		}
+	}
 
 	////  soluzione brutta
 	//for (i = 0; (i < n - 1); i++) {

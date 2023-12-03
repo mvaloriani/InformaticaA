@@ -26,9 +26,9 @@ int main() {
 
 	do {
 		scanf("%d", &val);
-		if (val > 0 && (val % 3 == 0 ||
-			val % 5 == 0 || val % 7 == 0))
+		if (val > 0 && (val % 3 == 0 || val % 5 == 0 || val % 7 == 0)) {
 			contatore++;
+		}
 	} while (val != -1);
 
 	do {

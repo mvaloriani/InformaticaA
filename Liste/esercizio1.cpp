@@ -5,7 +5,8 @@
 
 /*
  Si consideri una lista dinamica di interi,
- i cui elementi sono del tipo definito come di seguito riportato:
+ i cui elementi sono del tipo definito come 
+ di seguito riportato:
 	typedef struct El {
 	  int dato;
 	  struct El *next;
