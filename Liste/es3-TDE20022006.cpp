@@ -1,25 +1,31 @@
 /*
-Sia data una lista concatenata semplice non ordinata di interi senza valori duplicati.
+Sia data una lista concatenata semplice non 
+ordinata di interi senza valori duplicati.
 La struttura è:
 typedef struct Elem { int    dato;
 struct Elem * next;  } Nodo;
 typedef Nodo * Lista;
+
 La lista rappresenta un insieme di numeri.
+
 Una funzione incrocia() riceve come parametri:
 la lista, un vettore dinamico di interi
 (anch’esso senza duplicati, allocato dal programma chiamante)
 e la lunghezza di tale vettore dinamico.
 
-
 La funzione rimuove dalla lista originaria (deallocandoli)
 tutti i valori contenuti nel vettore (se presenti) e
-aggiunge in coda tutti i valori contenuti nel vettore e non nella lista originaria.
+aggiunge in coda tutti i valori contenuti nel vettore e
+non nella lista originaria.
+
 Si definisca opportunamente il prototipo della funzione incrocia()
-e si descriva sinteticamente (ma in modo preciso) come opera un algoritmo che la implementa.
+e si descriva sinteticamente (ma in modo preciso) 
+come opera un algoritmo che la implementa.
 
 In particolare, si badi a evitare che un valore presente nella lista
 e non nel vettore sia prima aggiunto e poi rimosso (o viceversa)
-Si codifichi poi in C la funzione secondo l’algoritmo precedentemente dettagliato
+Si codifichi poi in C la funzione secondo 
+l’algoritmo precedentemente dettagliato
 
 */
 
@@ -45,7 +51,7 @@ void incrocia(Lista * lis, int * v, int lun) {
 		}
 
 		else
-			if ((*lis)->dato == v[i]) {        /* Se il primo valore è v[i] */
+			if ((*lis)->dato == v[i]) {/* Se il primo valore è v[i] */
 				cur = *lis;
 				*lis = (*lis)->next;
 				free(cur);
@@ -84,7 +90,7 @@ int VerificaPresenza(Lista lista, int elem);
 Lista Cancella(Lista lista, int elem);
 
 
-Lista incrocia(Lista lis, int * v, int lun) {
+Lista incrociaRIC(Lista lis, int * v, int lun) {
 	if (lun == 0)
 		return lis;
 	if (VerificaPresenza(lis, v[0]))
@@ -96,7 +102,7 @@ Lista incrocia(Lista lis, int * v, int lun) {
 	if (lun == 1)
 		return lis;
 
-	return incrocia(lis, &v[1], lun - 1);
+	return incrociaRIC(lis, &v[1], lun - 1);
 }
 
 Lista incrocia(Lista lis, int * v, int lun) {
@@ -147,15 +153,16 @@ Lista InsInFondo(Lista lista, int elem) {
 	return lista;
 }
 
-bool VerificaPresenza(Lista lista, int elem) {
+int VerificaPresenza(Lista lista, int elem) {
 	if (lista == NULL)
-		return false;
+		return 0;
 	if (lista–> dato == elem)
-		return true;
+		return 1;
 	
 	return VerificaPresenza(lista–> next, elem);
 }
 
+// ritorno il puntatore al nodo
 Lista VerificaPresenza2(Lista lista, int elem) {
 	
 	if (lista == NULL && lista->next ==null)

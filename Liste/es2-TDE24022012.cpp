@@ -49,8 +49,13 @@ int main() {
 }
 
 
-
-
+/*
+Heap: 
+4 x sizeof(nodo) = 4 x(8 + 4) Byte = 48 Byte
+Stack = 
+sizeof(p) + sizeof(r) + 5 x sizeof(r.d.a.di f) =
+5 Byte + 4 Byte + 5 x(4 + 4 + 4) Byte = 69 Byte
+*/
 
 
 

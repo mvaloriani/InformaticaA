@@ -15,7 +15,7 @@ typedef nodo *lista;
 
 
 lista radice;
-nodo * max(lista lis) {
+nodo* max(lista lis) {
 	nodo * e;
 	if (lis == NULL) {//può accadere solo 1° chiamata
 		printf("lista vuota");

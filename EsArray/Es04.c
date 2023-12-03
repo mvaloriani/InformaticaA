@@ -3,11 +3,14 @@
 #endif
 
 //Scrivere un programma C che :
-//Legge una sequenza di numeri interi e quei numeri compresi tra 0 e 1023 
-//vengono memorizzati in un vettore di nome V.La lettura termina quando nel
+//Legge una sequenza di numeri interi e
+//  quei numeri compresi tra 0 e 1023 
+//vengono memorizzati in un vettore di nome V.
+// La lettura termina quando nel
 //vettore sono stati inseriti 10 numeri
 //Per ogni numero in V il programma esegue la conversione in binario, 
-//memorizza i resti ottenuti in un vettore R opportunamente dimensionato e
+//memorizza i resti ottenuti in un vettore R opportunamente 
+// dimensionato e
 //stampa il contenuto di R
 
 
@@ -18,21 +21,32 @@
 #include<stdio.h> 
 
 int main() {
-	int i = 0, j, V[5], R[N];
+	int i = 0, j, V[M], R[N];
 	
 	do {
 		scanf("%d", &V[i]);
-		if (V[i] >= 0 && V[i] <= MAXVAL)
+		if (V[i] >= 0 && V[i] <= MAXVAL && V[i]!=5)
 			i++;
 	} while (i<M);
 
 
 	for (i = 0; i<M; i++) {
+	
 		for (j = N - 1; j >= 0; j--) {
 			R[j] = V[i] % 2;
 			V[i] = V[i] / 2;
 		}
 		for (j = 0; j<N; j++)
+			printf("%d ", R[j]);
+		printf("\n");
+
+
+		temp = V[i];
+		for (j = 0; j <N-1; j++) {
+			R[j] = temp % 2;
+			temp = temp / 2;
+		}
+		for (j = N-1; j >=0; j--)
 			printf("%d ", R[j]);
 		printf("\n");
 	}

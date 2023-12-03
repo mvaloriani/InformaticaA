@@ -49,7 +49,8 @@ ListaDiInteri MinEven(ListaDiInteri lis) {
 			p = MinEven(lis->next);
 		else {
 			p = MinEven(lis->next);
-			if (p != NULL)  p = MinEl(lis, p);
+			if (p != NULL)  
+				p = MinEl(lis, p);
 			else  p = lis;
 		}
 	return p;
