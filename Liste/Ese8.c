@@ -3,21 +3,26 @@
 #include <stdlib.h>
 
 /*
-Si progetti e codifichi un programma C che apre il file di testo input.txt e
-genera il file di testo output.txt, che contiene, in ordine inverso ma
-inalterate, le sole linee di input.txt che hanno lunghezza compresa 
+Si progetti e codifichi un programma C che apre
+il file di testo input.txt e
+genera il file di testo output.txt, che contiene,
+in ordine inverso ma
+inalterate, le sole linee di input.txt che hanno
+lunghezza compresa 
 tra 10 e 20 caratteri (ignorando le altre linee). 
 A tale scopo, il programma alloca una lista dinamica
 che contiene le linee da trasferire, 
-genera il file scandendo la lista e la dealloca prima di terminare.
+genera il file scandendo la lista e la dealloca 
+prima di terminare.
 
 Si usi la seguente definizione della lista:
 typedef struct EL { char linea[21]; struct EL * next; } Nodo;
 typedef Nodo * Lista;
 
-Si provi a costruire la lista nel modo più semplice che permetta
-poi di generare facilmente l'output
-Si può assumere che l'ultima linea di input.txt termini con '\n'
+Si provi a costruire la lista nel modo più semplice
+che permetta poi di generare facilmente l'output
+Si può assumere che l'ultima linea di input.txt 
+termini con '\n'
 e che nessuna linea superi i 255 caratteri
 
 */

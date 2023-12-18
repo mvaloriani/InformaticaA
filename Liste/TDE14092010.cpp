@@ -21,6 +21,7 @@ int checkin(char* targa) {
 	float credit;
 	if ((f = fopen("credito.txt", "r")) == NULL)
 		return -1;
+
 	while (fscanf(f, "%s%f", plaque, &credit) == 2) {
 		if (strcmp(targa, plaque) == 0 && credit >= 2.50) {
 			fclose(f);
@@ -81,7 +82,7 @@ all’auto entrata
 
 
 typedef struct Car {
-	char *targa;
+	char* targa;
 	struct Car * next;
 } Auto;
 typedef Auto * Lista;
@@ -116,7 +117,7 @@ Lista instesta(Lista L, char * targa) {
 	punt->next = L;
 	return punt;
 }
-
+			
 void instesta(Lista* L, char * targa) {
 	Lista punt;
 	punt = (Lista)malloc(sizeof(Auto));
@@ -169,23 +170,6 @@ int find(Lista cars, char * targa) {
 	if (cars == NULL) return 0;
 	if (strcmp(cars->targa, targa) == 0) return 1;
 	return find(cars->next, targa);
-}
-
-Lista remove(Lista cars, char * targa) {
-	Lista punt;
-	if (cars != NULL)
-		if (strcmp(cars->targa, targa) == 0) {
-			punt = cars->next;
-			free(cars->targa);   // era stata allocata una stringa dinamica
-			free(cars);
-			return punt;
-		}
-		else {
-			cars->next = remove(cars->next, targa);
-			return cars;
-		}
-	else
-		return cars;
 }
 
 Lista remove(Lista cars, char * targa) {

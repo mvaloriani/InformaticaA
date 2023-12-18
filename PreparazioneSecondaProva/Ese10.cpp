@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct ND { unsigned int matr; char * nome; struct ND * nextMatr, * nextNome; } Nodo;
+typedef struct ND { 
+	unsigned int matr; 
+	char * nome; 
+	struct ND * nextMatr,
+		* nextNome; } Nodo;
 typedef Nodo * ListPtr;
 typedef struct DP { ListPtr headMatr, headNome; } Lista; 
 
@@ -34,6 +38,22 @@ ListPtr trovaPrecNome( Lista L,char* name) {
 	L.headNome = L.headNome->nextNome;
 	return trovaPrecNome(L, name);
 }
+
+ListPtr trovaPrecNome2(ListaPrt L, char* name) {
+	if (L == NULL || strcmp(L->nome, name) > 0)
+		return NULL;
+	if (strcmp(L->nome, name) < 0 &&
+		(L->nextNome == NULL && strcmp(L->nextNome->nome) > 0))
+		return L;
+	return trovaPrecNome(L->next, name);
+}
+
+ListPtr trovaPrecNome2(Lista L, char* name) {
+	if (L.headNome == NULL || strcmp(L.headNome->nome, name) > 0)
+		return NULL;
+	return trovaPrecNome2(l.headNome, name);
+}
+
 
 Lista aggiungistudente( Lista L, char * name ) {
 	ListPtr lastM = trovaCodaMatr(L);
@@ -94,15 +114,28 @@ lessicografico della lista ricevuta come parametro coincide con quello per matri
 
 int miracolo( Lista L ) {
   if( L.headMatr != L.headNome )
-  return 0;
-  if( L.headMatr == L.headNome )
-  if( L.headMatr == NULL ) 
+	return 0;
+  if( L.headMatr == L.headNome && L.headMatr == NULL ) 
     return 1;
+
   L.headMatr = L.headMatr->nextMatr;
   L.headNome = L.headNome->nextNome;
   return miracolo(L);
 }
 
+int miracolo2(ListPtr L) {
+	if (L->nextMatr != L.nextNome)
+		return 0;
+	if (L->nextMatr == L->nextNome && L->nextMatr == NULL)
+		return 1;
+	return miracolo(L->nextMatr);
+}
+
+int miracolo(Lista L) {
+	if (L.headMatr != L.headNome)
+		return 0;
+	return miracolo2(L.headNome)
+}
 /*
 (d)	Si consideri la seguente variante astratta della lista precedente,
 in cui i nodi hanno solo i due puntatori che inducono gli ordinamenti.
@@ -121,7 +154,13 @@ successivo in base all’altro ordinamento).
 
 
 bool ordinamentiopposti(ListPtr2 L){
-	if (L=NULL)	{
+	if (L==NULL)	{
+		return 1;
+	}
+	if (L->next1 == NULL) {
+		return 1;
+	}
+	if (L->next1->nxt2 == NULL) {
 		return 1;
 	}
 
