@@ -1,10 +1,22 @@
 /*
-Sia data una lista concatenata semplice non ordinata di interi senza valori duplicati. La struttura è:
+Sia data una lista concatenata semplice non ordinata di interi senza
+valori duplicati. La struttura è:
 typedef struct Elem { int    dato;
 struct Elem * next;  } Nodo;
 typedef Nodo * Lista;
-La lista rappresenta un insieme di numeri. Una funzione incrocia() riceve come parametri: la lista, un vettore dinamico di interi (anch’esso senza duplicati, allocato dal programma chiamante) e la lunghezza di tale vettore dinamico. La funzione rimuove dalla lista originaria (deallocandoli) tutti i valori contenuti nel vettore (se presenti) e aggiunge in coda tutti i valori contenuti nel vettore e non nella lista originaria.
-Si definisca opportunamente il prototipo della funzione incrocia() e si descriva sinteticamente (ma in modo preciso) come opera un algoritmo che la implementa. In particolare, si badi a evitare che un valore presente nella lista e non nel vettore sia prima aggiunto e poi rimosso (o viceversa)
+
+La lista rappresenta un insieme di numeri. Una funzione incrocia()
+riceve come parametri: la lista, un vettore dinamico di interi 
+(anch’esso senza duplicati, allocato dal programma chiamante) 
+e la lunghezza di tale vettore dinamico. La funzione rimuove dalla
+lista originaria (deallocandoli) tutti i valori contenuti nel 
+vettore (se presenti) e aggiunge in coda tutti i valori contenuti
+nel vettore e non nella lista originaria.
+Si definisca opportunamente il prototipo della funzione incrocia()
+e si descriva sinteticamente (ma in modo preciso) come opera un
+algoritmo che la implementa. In particolare, si badi a evitare che
+un valore presente nella lista e non nel vettore sia prima aggiunto
+e poi rimosso (o viceversa)
 Si codifichi poi in C la funzione secondo l’algoritmo precedentemente dettagliato
 
 */

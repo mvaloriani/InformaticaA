@@ -1,12 +1,15 @@
 /*
 Le seguenti dichiarazioni definiscono una struttura 
 dati che rappresenta una lista di acronimi
-(un acronimo è una sigla in cui ogni lettera è l’iniziale di una parola, come ATM = Azienda Trasporti Milanesi).
+(un acronimo è una sigla in cui ogni lettera è 
+l’iniziale di una parola, come ATM = Azienda Trasporti Milanesi).
 
 Si dichiari (tramite opportuno prototipo) 
-la funzione … acronimogiusto(…) che riceve come parametro una struttura 
-di tipo Acronym e restituisce 1 se le iniziali delle parole della lista di 
-parole corrispondono esattamente alle lettere della sigla, 0 altrimenti. 
+la funzione … acronimogiusto(…) che riceve come parametro
+una struttura di tipo Acronym e restituisce 1 
+se le iniziali delle parole della lista di 
+parole corrispondono esattamente alle lettere della sigla, 
+0 altrimenti. 
 Si descriva brevemente (ma in modo preciso) un algoritmo per 
 implementarla e la si codifichi in C.
 
@@ -20,13 +23,15 @@ Se la sigla è una stringa vuota o la lista di parole è
 una lista vuota, l’acronimo è (convenzionalmente) giusto se e
 solo se anche l’altro componente dell’acronimo è vuoto.
 
-Si codifichi in C (preferibilmente in modo ricorsivo) una funzione 
-che effettui la deallocazione di una lista di acronimi, secondo il prototipo:
+Si codifichi in C (preferibilmente in modo ricorsivo) 
+una funzione che effettui la deallocazione 
+di una lista di acronimi, secondo il prototipo:
 void freeAcroList( AcroList )
 Si badi a non deallocare solamente gli elementi di
 tipo AcroNode che compongono la lista di acronimi, 
 ma anche le liste di parole contenute in ciascun acronimo. 
-Eventuali funzioni ausiliarie devono essere anch’esse codificate.
+Eventuali funzioni ausiliarie devono essere 
+anch’esse codificate.
 
 */
 
@@ -71,7 +76,6 @@ int acronimogiusto(Acronym a) {
 	else
 		return 0;
 }
-
 
 void freeWordList(WordList list) {
 	if (list != NULL) {
