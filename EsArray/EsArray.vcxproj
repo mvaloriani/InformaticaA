@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ese9.c" />
+    <ClCompile Include="Esercizio1.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2100DABB-87F6-44A0-90D5-BA23E6064021}</ProjectGuid>

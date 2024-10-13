@@ -15,7 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Esercizio1.c">
+    <ClCompile Include="Ese4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ese5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ese6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ese7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ese8.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
