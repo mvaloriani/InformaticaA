@@ -11,11 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ese4.c" />
-    <ClCompile Include="Ese5.c" />
-    <ClCompile Include="Ese6.c" />
-    <ClCompile Include="Ese7.c" />
-    <ClCompile Include="Ese8.c" />
+    <ClCompile Include="Ese2.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D94DA414-9581-45F3-A5C3-A6CC8E86868B}</ProjectGuid>

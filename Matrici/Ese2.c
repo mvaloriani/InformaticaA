@@ -18,7 +18,21 @@ int main() {
         if (mat[0][i] < 0)
             neg++;
         i++;
-    } while (neg < 2 && i < 50);
+    } while (neg < 2 && i < N);
+        
+    //for (i=0;i<N && neg < 2; i++)
+    //{
+    //    scanf("%d", &mat[0][i]);
+    //    if (mat[0][i] < 0)
+    //        neg++;
+    //}
+
+
+    for (int j = 0; j < i;  j++)
+    {
+        printf("%d", mat[0][j]);
+    }
+
 
     return 0;
 }

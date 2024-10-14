@@ -11,7 +11,7 @@ appare lo 0 e dice in che posizione sono state trovate.
 #define N 3  
 #define M 4 
 int main() {
-	int m[N][N], i, j, trovato, cont = 0, cont2 = 0;
+	int m[N][M], i, j, trovato, cont = 0, cont2 = 0;
 	for (i = 0; i < N; i++) {
 		for (j = 0; j < M; j++) {
 			printf("\nInserisci un elemento della matrice [%d][%d]: ", i, j);
@@ -20,14 +20,23 @@ int main() {
 	}
 	printf("\nLa matrice inserita e': \n");
 	for (i = 0; i < N; i++) {
-		for (j = 0; j < M; j++)
+		for (j = 0; j < M; j++) {
 			printf(" %d ", m[i][j]);
+		}
 		printf("\n");
 	}
 
 	/* Cerca lo 0 */
 	//prima
 	trovato = 0;
+
+	//i = 0;
+	//while (i < N && trovato == 0)
+	//{
+	//	//faccio cose
+	//	i++;
+	//}
+
 	for (i = 0; i < N && trovato == 0; i++)
 		for (j = 0; j < M && trovato == 0; j++)
 			if (m[i][j] == 0) {
@@ -48,7 +57,7 @@ int main() {
 	for (i = 0; i < N; i++)
 		for (j = 0; j < M; j++)
 			if (m[i][j] == 0) {
-				cont++;
+				cont++;	//cont = cont + 1;
 			}
 
 	if (cont % 2 == 0)
@@ -57,13 +66,17 @@ int main() {
 		cont = cont / 2 + 1;
 
 	//cont = (cont % 2==0) ? cont / 2 : cont / 2 + 1;
-
-	for (i = 0; i < N; i++)
-		for (j = 0; j < M; j++)
+	
+	trovato = 0;
+	for (i = 0; i < N && trovato==0; i++)
+		for (j = 0; j < M && trovato == 0; j++)
 			if (m[i][j] == 0) {
 				cont2++;
-				if (cont2 == cont)
+				if (cont2 == cont) {
 					printf("%d %d ", i, j);
+					trovato = 1;
+					//return 0;				
+				}
 			}
 	//system("pause");
 	//getchar();
@@ -98,19 +111,18 @@ int main2() {
 				}
 			}
 	//ultimo 0
-	if (lastI != -1) {
+	if (lastI != -1) { //(cont>0)
 		printf("ultimo 0 in %d %d", lastI, lastJ);
 	}
 
-	//cont = (cont % 2==0) ? cont / 2 : cont / 2 + 1;
-	cont = cont + 1 / 2;
+	cont = (cont + 1) / 2;
 
 	for (i = 0; i < N; i++)
 		for (j = 0; j < M; j++)
 			if (m[i][j] == 0) {
 				cont--;
 				if (cont == 0) {
-					printf("%d %d ", i, j);
+					printf("valore mediano %d %d ", i, j);
 					return 0;
 				}
 			}
