@@ -5,10 +5,9 @@
 //Scrivere un programma che svolga le seguenti operazioni: 
 // 1) Acquisisca informazioni relative a caratteristiche
 // fisiche di 10 persone. 
-//    Ogni informazione è composta da peso,
-// altezza ed età. 
-// 2) Terminata la fase di acquisizione, stampi sullo schermo
-// le informazioni relative
+// Ogni informazione è composta da peso, altezza ed età. 
+// 2) Terminata la fase di acquisizione, stampi sullo schermo le
+//  informazioni relative
 //   a tutte le persone per le quali il valore dell'età è <= 20. 
 
 #include <stdio.h> 
@@ -18,6 +17,9 @@
 #define MAX_PERS 3 
 #define MAX_ETA 20 
 
+//struct Point { int x; int y; } a1;
+//typedef struct Point sa;
+
 typedef struct { 
 	int peso;
 	int alt;
@@ -26,16 +28,15 @@ typedef struct {
 	int main() {
 
 		dati arch[MAX_PERS]; 
-		int i; 
-
+		int i; 		
 		// acquisizione
 		for(i=0;i<MAX_PERS;i++)  { 
 			printf("Altezza: ");
-			scanf("%d", &arch[i].alt); 
+			scanf("%d",&arch[i].alt); 
 			printf("\nPeso: ");
-			scanf("%d", &(arch[i].peso)); 
+			scanf("%d",&(arch[i].peso)); 
 			printf("\nEta': ");
-			scanf("%d", &(arch[i].eta));
+			scanf("%d",&(arch[i].eta));
 		}
 
 		// stapa persone con età<=max
