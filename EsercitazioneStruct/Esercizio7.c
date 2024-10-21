@@ -7,7 +7,8 @@ Si scriva un programma C per la gestione di una scuola di ballo.
 Ogni classe consiste di un insieme di persone e di due istruttori. 
 Ogni persona ha un nome, un cognome, un sesso e un’età.
 
-Si definiscano le strutture dati necessarie allo sviluppo del programma (strutture, array, ecc.)
+Si definiscano le strutture dati necessarie allo sviluppo del programma
+(strutture, array, ecc.)
 Si implementi un frammento di codice che partendo da una struttura di tipo “classe” 
 stampa l’età media degli studenti di sesso maschile
 

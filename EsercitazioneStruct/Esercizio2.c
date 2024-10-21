@@ -46,14 +46,16 @@ int main() {
 
 	// visualizzazione
 	printf("\n persone con eta' <= %d", MAX_ETA);
-	for (i=0; i<MAX_PERS; i++) {
+	for (i=0; i<MAX_PERS; i++) {// 	(i = 0; i < MAX_PERS && Valido==0; i++) 
 		if(arch[i].eta <= MAX_ETA) 
 		{
 			printf("\n %d, %d, %d", arch[i].alt, arch[i].peso, arch[i].eta); 
+	
 		}
-		//else{
-		//	break;
-		//}
+		else{
+			break;
+			//valido = 1;
+		}
 	}
 
 	system("pause");
