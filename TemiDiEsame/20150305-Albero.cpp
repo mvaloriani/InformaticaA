@@ -30,13 +30,13 @@ se il codice porta a una posizione non valida.
 
 void arrampica(Albero t, char* codice) {
 	int len = strlen(codice);
-	int count = 0;
 
 	if (t == NULL) {
 		printf("Sei Caduto");
 		return;
 	}
 
+	//if (codice[0] == '\0') {
 	if (len == 0) {
 		printf(" % s", t->premio);
 		return;
@@ -46,5 +46,29 @@ void arrampica(Albero t, char* codice) {
 		arrampica(t->sx, &codice[1]);
 	else
 		arrampica(t->dx, &codice[1]);
+
+}
+
+
+void arrampica(Albero t, char* codice) {
+
+	arrampicataRIC(t, codice, 0);
+}
+void arrampicaRIC(Albero t, char* codice, int i) {
+
+	if (t == NULL) {
+		printf("Sei Caduto");
+		return;
+	}
+
+	if (codice[i] == '\0') {
+		printf(" % s", t->premio);
+		return;
+	}
+
+	if (codice[i] == 'S')
+		arrampicaRIC(t->sx, codice, i+1);
+	else
+		arrampicaRIC(t->dx, codice, i++);
 
 }

@@ -1,7 +1,10 @@
 /*
-Si progetti e codifichi una funzione C che riceve in ingresso un array a di interi non negativi.
-La funzione calcola il numero degli elementi dell’array che godono della seguente proprietà: 
-il valore dell’elemento è pari al numero di elementi con valore inferiore considerando 
+Si progetti e codifichi una funzione C che riceve in ingresso un 
+array a di interi non negativi.
+La funzione calcola il numero degli elementi dell’array
+che godono della seguente proprietà: 
+il valore dell’elemento è pari al numero di elementi
+con valore inferiore considerando 
 solo quelli in posizione precedente.
 Ad esempio, si consideri il seguente vettore:
 1 2 1 3 6 4 1 4 14

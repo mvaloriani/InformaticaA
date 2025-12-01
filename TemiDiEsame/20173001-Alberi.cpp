@@ -104,14 +104,14 @@ int f(Tree t) {
     rr = f(t->right);
 
     //return rr + rl == 2;
-    //if (rl + rr == 2)
-    //    return 1;
-    //else
-    //    return 0;
+    if (rl + rr == 2)
+        return 1;
+    else
+        return 0;
 
 
-    return f(t->left) + f(t->right) == 2 ? 1 : 0;
-    return rl + rr == 2 ? 1 : 0;
+    //return f(t->left) + f(t->right) == 2 ? 1 : 0;
+    //return rl + rr == 2 ? 1 : 0;
 
 
 }

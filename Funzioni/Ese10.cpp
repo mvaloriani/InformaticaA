@@ -25,11 +25,9 @@ il risultato è 2 e S3 = “spero”.
 
 int lung_str(char *s) {
 	int i = 0;
-
 	while (s[i] != '\0') {
 		i++;
 	}
-
 	return i;
 }
 
@@ -45,8 +43,9 @@ int inclusione_str(char *s1, char *s2) {
 		j = 0;
 		trovato = 1;
 		new_i = i;
-		while ((j < len2) && (trovato)) {
+		while ((j < len2) && (trovato==1)) {
 			trovato = (s1[new_i] == s2[j]);
+			//if (s1[new_i] != s2[j])trovato = 0;
 			j++;
 			new_i++;
 		}
@@ -72,9 +71,10 @@ void sottrai_str(char *s1, char *s2, char *s3) {
 	for (i = 0; i < index; i++)
 		s3[i] = s1[i];
 
-	for (i = index + len2; i < len1; i++)
+	for (i = index + len2; i < len1; i++)//i <= len1, cosi metto anche \0
 		s3[i - len2] = s1[i];
 
+	//s3[len1 - len2] = '\0';  // per aggiungere il char '\0' 
 	s3[i - len2] = s1[i];  // per aggiungere il char '\0' 
 }
 

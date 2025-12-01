@@ -33,15 +33,27 @@ int main() {
 		printf("Non Palindromo");
 
 	////soluzione 2
-	bool result = true;
-	for (i = 0; i < contatore / 2 && result; i++) {
+	int result = 1;
+	for (i = 0; i < contatore / 2 && result!=0; i++) {
 		if (stringa[i] != stringa[contatore - i]) {
 			printf("Non Palindromo");
-			result = false;
+			result = 0;
 		}
 	}	
-	if (result)
+	if (result==1)
 		printf("Palindromo");
+
+	////soluzione 3
+	int result = 1;
+	for (i = 0; i < contatore / 2; i++) {
+		if (stringa[i] != stringa[contatore - i]) {
+			printf("Non Palindromo");
+			break;
+		}
+	}
+	if (i == contatore / 2+1)
+		printf("Palindromo");
+
 
 
 	system("pause");

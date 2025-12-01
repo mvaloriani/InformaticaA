@@ -1,13 +1,18 @@
 /*
 Definito il tipo punto
 typedef struct {int x; int y; int NMonete;  } punto;
-scrivere una funzione che riceve in input una matrice M di punti 
-di dimensione N*N e due coordinate x, y.
-La funzione deve navigare la matrice, partendo dal punto indicato dalle
-coordinate x e y e spostarsi ogni volta nelle coordinate indicate dal punto raggiunto.
-Nello spostarsi la funzione deve sommare tutti i valori di NMonete incontrati.
-La funzione procede allo stesso modo finché o non torna su un punto già toccato
-o trova coordinate non valide. A quel punto restituisce la somma delle monete raccolte.
+
+scrivere una funzione che riceve in input una matrice M
+di punti di dimensione N*N e due coordinate x, y.
+La funzione deve navigare la matrice, partendo dal punto
+indicato dalle coordinate x e y e spostarsi ogni volta 
+nelle coordinate indicate dal punto raggiunto.
+Nello spostarsi la funzione deve sommare
+tutti i valori di NMonete incontrati.
+
+La funzione procede allo stesso modo finché o non torna 
+su un punto già toccato o trova coordinate non valide. 
+A quel punto restituisce la somma delle monete raccolte.
 */
 
 #include <stdio.h>
@@ -28,16 +33,23 @@ int caccia(punto M[N][N], int x, int y) {
 			M2[i][j]=0;
 
 	//Scorro la matrice finche ho degli 0 o noon esco 
-	while(x>=0 && x<N && y>=0 && y<N && M2[x][y]==0){
+	while(x>=0 && x<N && y>=0 && y<N && M2[x][y]==0){// M[x][y].NMonete >= 0
 		//assegno 1
 		M2[x][y]=1;
 		//sommo le monete
 		totale=totale+M[x][y].NMonete;
+		//M[x][y].NMonete == -1; varinate senza matrice
+		
 		// aggiorno le coordinate		
 		
-		/*punto temp = M[x][y];
+		//x = M[x][y].x; 
+		//y = M[x][y].y; <-- errore
+
+		/*
+		punto temp = M[x][y];
 		x = temp.x;
-		y = temp.y;*/
+		y = temp.y;
+		*/	
 
 		aux=M[x][y].x;
 		y=M[x][y].y;

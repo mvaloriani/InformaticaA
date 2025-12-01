@@ -2,9 +2,10 @@
 Definire una struttura dati che descriva le 
 squadre di un torneo di calcio.
 Le squadre sono 6, di ogni squadra si devono 
-memorizzare: matricola squadra,
-nome, città e tutti giocatori come nome
-e numero di maglia.
+memorizzare: 
+matricola squadra,
+nome, città e  tutti giocatori come 
+nome e numero di maglia.
 Quanta memoria occupa questa struttura?
 Scrivere una funzione che riceve in ingresso
 la struttura definita e stampa l’elenco dei
@@ -15,8 +16,8 @@ portieri titolari.
 #include <stdio.h>
 
 typedef struct {
-	char cognome[10];
-	int numero;
+	char cognome[10]; //1 byte per ogni char
+	int numero; //2 byte o 4 byte
 } giocatore;
 
 typedef struct {
@@ -35,9 +36,11 @@ squadra torneo[6];
 void stampaPortieri(squadra sq[]) {
 	int i, j;
 	for (i = 0; i < 6; i++)
-		for (j = 0; j < 11; j++)
-			if (sq[i].formazione[j].numero == 1)
+		for (j = 0; j < 11; j++) //for (j = 0; j < 11 && trovato==0; j++)
+			if (sq[i].formazione[j].numero == 1) {
 				printf("\n%s", sq[i].formazione[j].cognome);
+				break; //trovato=1
+			}
 }
 
 void creatorneo(squadra sq[]) {

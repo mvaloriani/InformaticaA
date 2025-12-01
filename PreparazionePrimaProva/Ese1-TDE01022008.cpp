@@ -18,6 +18,7 @@ in sottoproblemi più semplici.
 
 
 
+
 #include <stdio.h> 
 typedef struct { int V[20];  int C;     } STR; 
 typedef  int MATR[20][20];
@@ -49,4 +50,11 @@ int f2(STR* x, MATR m) {
 		if (contaSMseMag3(x->V[i], m) == 1)
 			s = s + x->V[i];
 	return s;
+}
+void f3(STR* x, MATR m, int* s) {
+	int i;
+	*s = 0;
+	for (i = 0; i < (*x).C; i++)
+		if (contaSMseMag3(x->V[i], m) == 1)			
+			*s = *s + x->V[i];
 }

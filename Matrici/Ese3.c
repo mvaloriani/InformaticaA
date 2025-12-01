@@ -26,5 +26,9 @@ int main() {
 			}
 		}
 	}
+
+	for (; r < N; r++)
+		for (; k < M; k++)
+			mat2[r][k] = 0;
 	return 0;
 }

@@ -30,7 +30,7 @@ int main() {
 	//stamp matrice
 	for (i = 0; i < N; i++) {
 		for (j = 0; j < N; j++) {
-			printf("%4d", M[i][j]);	// stampa lasciando 4 spazzi		
+			printf("%d", M[i][j]);	// stampa lasciando 4 spazzi		
 		}
 		printf("\n");
 	}

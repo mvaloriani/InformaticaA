@@ -81,12 +81,23 @@ Tempo CentToTempo(long int t) {
 }
 
 Tempo sum(Tempo t1, Tempo t2) {
-	return CentTempo(TempoCent(t1) + TempoCent(t2));
+	return CentToTempo(TempoToCent(t1) + TempoToCent(t2));
+
+	/*Tempo temp;
+	int riporto=0;
+	if (temp.cent = t1.cent + t2.cent > 100) {
+		temp.cent = temp.cent / 100;
+		riporto = temp.cent % 100;
+	}
+	if (temp.sec = t1.sec + t2.sec + riporto > 60) {
+		temp.cent = temp.cent / 100;
+		riporto = temp.cent % 100;
+	}*/
 }
 
 long int cmp(Tempo t1, Tempo t2) {
-	long int tmp1 = TempoCent(t1);
-	long int tmp2 = TempoCent(t2);
+	long int tmp1 = TempoToCent(t1);
+	long int tmp2 = TempoToCent(t2);
 
 	//if (tmp1 == tmp2)
 	//	return 0;
@@ -167,8 +178,9 @@ Classifica aggiorna(Tappa t, Classifica c) {
 		else { /* dealloco il nodo se il conc. non è arrivato  */
 			tmp = cur;
 			cur = cur->next;
-			free(tmp);
 			prev->next = cur;
+
+			free(tmp);
 		}
 
 	}
@@ -201,16 +213,14 @@ Classifica ultimoInClassifica(Classifica c) {
 
 //Classifica cancellaElemento(Classifica prev, Classifica daCancellare) {
 //	Classifica tmp;
-//	tmp = daCancellare;
-//	daCancellare = daCancellare->next;
-//	free(tmp);
-//	prev->next = daCancellare;
+//	tmp = daCancellare->next;
+//	free(daCancellare);
+//	prev->next = tmp;
 //}
 //
 //Classifica cancellaElemento(Classifica prev) {
 //	Classifica tmp, daCancellare = prev->next;
-//	tmp = daCancellare;
-//	daCancellare = daCancellare->next;
-//	free(tmp);
-//	prev->next = daCancellare;
+//	tmp = prev->next->next;
+//	free(daCancellare);
+//	prev->next = tmp;
 //}

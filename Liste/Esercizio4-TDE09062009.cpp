@@ -30,8 +30,11 @@ int picchi(Lista lis) {
 	while (lis != NULL && lis->next != NULL && 
 		lis->next->next != NULL) {
 		if (((float)lis->valore < (float)lis->next->valore / 2) &&
-			((float)lis->next->next->valore < (float)lis->next->valore / 2)
-			)
+			((float)lis->next->next->valore < (float)lis->next->valore / 2))
+
+	/*	if (lis->valore * 2 < lis->next->valore &&
+			lis->next->next->valore * 2 < lis->next->valore)*/
+
 			n++;
 		lis = lis->next;
 	}
@@ -41,8 +44,9 @@ int picchi(Lista lis) {
 int picchiRIC(Lista lis) {
 	if (!(lis != NULL && lis->next != NULL && lis->next->next != NULL))
 		return 0;
-	if (((float)(lis->valore) < (float)(lis->next->valore) / 2) &&
-		((float)(lis->next->next->valore) < (float)(lis->next->valore) / 2))
+
+	if ((lis->valore * 2 < lis->next->valore) &&
+		(lis->next->next->valore * 2 < lis->next->valore) )
 		return 1 + picchiRIC(lis->next);
 	else
 		return picchiRIC(lis->next);

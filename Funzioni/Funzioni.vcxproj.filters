@@ -18,5 +18,14 @@
     <ClCompile Include="Ese1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ese0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ese11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ese12.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

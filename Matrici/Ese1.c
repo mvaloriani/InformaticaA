@@ -84,6 +84,8 @@ int main() {
 }
 
 
+
+
 int main2() {
 	int m[N][N], i, j, lastI = -1, lastJ = -1, cont = 0;
 	for (i = 0; i < N; i++) {
@@ -128,3 +130,26 @@ int main2() {
 			}
 	return 0;
 }
+
+int main3() {
+	int m[N][N], i, j, cont = 0, med = 0;
+	int R[N * M], C[N * M];
+
+	for (i = 0; i < N; i++)
+		for (j = 0; j < M; j++) {
+			if (m[i][j] == 0) {
+				R[cont] = i;
+				C[cont] = j;
+				cont++;
+			}
+		}
+
+	if (count == 0) {
+		printf("non ci sono zeri");
+	}
+	else {
+		printf("coordinate primo trovato %d,%d", R[0], C[0]);
+		printf("coordinate ultimo trovato %d,%d", R[cont - 1], C[cont - 1]);
+		med = (cont % 2 == 0) ? cont / 2 : cont / 2 + 1;
+		printf("coordinate mediane %d,%d", R[med], C[med]);
+	}

@@ -36,4 +36,6 @@ int domina(int A[][C], int B[][C]) {
 	if (bilancio > 0) return  1;
 	if (bilancio < 0) return -1;
 	return  0;
+
+	//return (bilancio > 0) ? 1 : -1;
 }
