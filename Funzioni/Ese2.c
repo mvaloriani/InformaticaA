@@ -11,6 +11,8 @@ tipo int che contengono rispettivamente la somma degli elementi di
 A di posto pari e quella degli elementi di A di posto dispari;
 restituisce la sommatoria di tutti gli elementi di A.
 */
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #define N 10
@@ -19,6 +21,10 @@ typedef struct { int a, b; } SOM;
 
 int ft(VT A, SOM *s) {
 	int i, som = 0;
+
+	(*s).a = 0;
+	*s.b = 0;
+	s->a = 0;
 	
 	s->a = 0; s->b = 0; //(*s).a = 0
 	for (i = 0; i<10; i++) {
@@ -26,7 +32,9 @@ int ft(VT A, SOM *s) {
 		if (i % 2 == 0) { s->a = s->a + A[i]; }
 		else { s->b = s->b + A[i]; }
 	}
+
 	return som;
+	//return s->a + s->b;
 }
 
 int ft2(VT A, SOM s) { ///ERRORE

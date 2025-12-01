@@ -27,13 +27,11 @@ di …doppia(…) che faccia uso della ricorsione
 
 
 int doppia(char parola[]) {
-
 	int len = strlen(parola);
 	//non è dopia perchè dispari
 	if (len % 2 != 0) {
 		return -1;
 	}
-
 	// ciclo su metà parola
 	for (int i = 0; i < len / 2; i++) {
 		// cerco differenze
@@ -45,50 +43,45 @@ int doppia(char parola[]) {
 	return 1;
 
 }
-
-int doppia2(char parola[], int len) {
-
-	//non è dopia perchè dispari
-	if (len % 2 != 0) {
-		return -1;
+int doppiaRic3(char parola[], int i) {
+	if (i == strlen(parola) / 2)
+		return 1;
+	else
+	{
+		return parola[i] == parola[i + strlen(parola) / 2] *
+			doppiaRic3(parola, i++);
 	}
-
-	// ciclo su metà parola
-	for (int i = 0; i < len / 2; i++) {
-		// cerco differenze
-		if (parola[i] != parola[i + len / 2]) {
-			return 0;
-		}
-	}
-	// parola doppia
-	return 1;
-
-}
-
-int doppia3(char parola[]) {
-	return doppia2(char parola[], strlen(temp));
 }
 
 
 int doppiaRic(char parola[], char parola2[]) {
 	if (strlen(parola) == 1)
-		return parola[0] == parola2[1] ? 1 : 0;
+		return parola[0] == parola2[0] ? 1 : 0;
 	else
 	{
-		return parola[0] == parola2[1] * 
-			doppiaRic(&parola[1], &parola2[1]);
+		if (parola[0] != parola2[0])
+			return 0;
+		else
+			return doppiaRic(&parola[1], &parola2[1])
+
+		/*return parola[0] == parola2[0] * 
+			doppiaRic(&parola[1], &parola2[1]);*/
 	}
 }
 
-int doppiaRic2(char parola[], int i) {
-	if (i == strlen(parola)/2)
-		return 1;
-	else
-	{
-		return parola[i] == parola[i+ strlen(parola) / 2] *
-			doppiaRic2(parola, i++);
+int doppiaRic(char parola[], char parola2[]) {
+	if (strlen(parola) == 1)
+		return parola[0] == parola2[0] ? 1 : 0;
+	
+	if (parola[0] != parola2[0])
+		return 0;
+
+	return doppiaRic(&parola[1], &parola2[1]);
 	}
 }
+
+
+
 
 
 int assonante(char parola[]) {
@@ -118,12 +111,31 @@ int assonante2(char parola[]) {
 	return doppia(temp);
 }
 
+int verifica(char parola[], int len) {
+
+	//non è dopia perchè dispari
+	if (len % 2 != 0) {
+		return -1;
+	}
+
+	// ciclo su metà parola
+	for (int i = 0; i < len / 2; i++) {
+		// cerco differenze
+		if (parola[i] != parola[i + len / 2]) {
+			return 0;
+		}
+	}
+	// parola doppia
+	return 1;
+
+}
+
 int assonante3(char parola[]) {
-	return doppia2(parola, strlen(parola) - 1);
+	return verifica(parola, strlen(parola) - 1);
 }
 
 int doppia3(char parola[]) {
-	return doppia2(char parola[], strlen(parola));
+	return verifica(char parola[], strlen(parola));
 }
 
 int main() {

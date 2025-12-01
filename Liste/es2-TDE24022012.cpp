@@ -18,12 +18,12 @@ Si indichi la linea stampata dal programma sullo standard output
 #include <string.h>
 #include <stdlib.h>
 
-typedef struct n { char c[8]; struct n *next; } nodo;
+typedef struct n{ char c[8]; struct n*next; } nodo;
 
-nodo * f(nodo * x, char * s) {
-	nodo * n;
+nodo* f(nodo* x, char* s) {
+	nodo* n;
 	if (strlen(s) > 0) {
-		n = (nodo *)malloc(sizeof(nodo));
+		n = (nodo*)malloc(sizeof(nodo));
 		n->next = x;
 		strcpy(n->c, s++);
 		n->c[1] = '\0';
@@ -57,21 +57,3 @@ sizeof(p) + sizeof(r) + 5 x sizeof(r.d.a.di f) =
 5 Byte + 4 Byte + 5 x(4 + 4 + 4) Byte = 69 Byte
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-Heap: 4 x sizeof(nodo) = 4 x (8+4) Byte = 48 Byte
-Stack = sizeof(p) + sizeof(r) + 5 x sizeof( r.d.a. di f) = 5 Byte + 4 Byte + 5 x (4+4+4) Byte = 69 Byte
-
-*/

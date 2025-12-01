@@ -16,20 +16,21 @@ in più funzioni.
 typedef int matrice[N][N];
 typedef matrice matmat[N][N];
 
+
 int f(matmat m,int k){
 	int i,j,cont=0;
 
 	//scorro la matrice di matrici
 	for(i=0;i<N;i++)
-		for(j=0;j<N;j++)
+		for(j=0;j<N;j++){
 			//l'elemto corrente è un amtrice NxN su cui valuto la funzione di test
-			if(f1(m[i][j],k))
+			if(f1(m[i][j],k)==1)
 				// conto il numero di martrici che verificano la condizione
 				cont++;
 
 	//in base al numero di matrici restituisco 0 o 1
 	if(cont>=k)
-		return 1;
+		return 1;}
 	else
 		return 0;
 }

@@ -31,19 +31,48 @@ int main() {
 }
 
 lista crea(int n, int V[]) {
-	lista testa;
 	if (n == 0)
 		return NULL;
+
+	lista testa;
 	testa = (lista)malloc(sizeof(Nodo));//il cast può essere omesso
 	testa->val = V[0];
 	testa->prox = crea(n - 1, &V[1]);
+
+
 //	testa->prox = crea(n - 1, V + 1);
-	
 //	printf("%d\n", testa->val);
 //	printf("%d\n", V[0]);
 
 	return testa;
 }
+
+
+lista crea2(int n, int V[]) {
+	if (n == 0)
+		return NULL;
+
+	lista testa, temp, prev;
+	
+	testa = (lista)malloc(sizeof(Nodo));//il cast può essere omesso
+	testa->val = V[0];
+
+	prev = testa;
+
+	for (int i = 1; i < n; i++)
+	{
+		temp = (lista)malloc(sizeof(Nodo));//il cast può essere omesso
+		temp->val = V[i];
+
+		prev->next = temp;
+		prev = prev->next;
+		
+	}
+	return testa;
+}
+
+
+
 void stampaInverso(lista lis) {
 	if (lis == NULL)
 		return;

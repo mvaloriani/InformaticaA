@@ -30,8 +30,12 @@ void f(MATR A, EXT *V) {
 			else
 				//elemMatrDiag = 0;
 				V->x[i][j] = A[i][j];
-
+			
+			/*elemMatrDiag = i == j ? 1 : 0;
 			//V->x[i][j] = A[i][j] - elemMatrDiag;
+			
+			//V->x[i][j] = A[i][j] - (i == j ? 1 : 0);
+
 		}
 	}
 }

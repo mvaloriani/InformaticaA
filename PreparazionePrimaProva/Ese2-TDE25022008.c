@@ -69,13 +69,48 @@ int condVerificaPicco(int numR, int numC, float mat[][], int i, int j) {
 		for (int t = j - 1; t <= j + 1; t++)
 		{
 			if (k < 0 || k >= numR || t < 0 || t >= numC) {
-				cont++;
+				cont++; //return 0 se escludo i bordi
 			}
-			else if (condPicco(mat[i][j], mat[k][t]))
+			else if (condPicco(mat[i][j], mat[k][t])==1)
 				cont++;
 		}
 	}
-	return cont >= 8; //cont >= 8 ? 1 : 0
+	return cont >= 8 ? 1 : 0
+}
+
+int condVerificaPicco2(int numR, int numC, float mat[][], int i, int j) {
+	int cont = 0;
+
+	for (int k = i - 1; k <= i + 1; k++){
+		for (int t = j - 1; t <= j + 1; t++){
+			if (k < 0 || k >= numR || t < 0 || t >= numC) {
+				cont++; //return 0 se escludo i bordi
+			}
+			else if (condPicco(mat[i][j], mat[k][t]) == 0 
+						&& k != i && t != j)
+				//cont++;
+				return 0;
+		}
+	}
+	return 1;
+}
+
+int condVerificaPicco3(int numR, int numC, float mat[][], int i, int j) {
+	//valido solo se escludo i bordi
+	if (i == 0 || i == numR || j == 0 || j == numR)
+		return 0;
+
+	if ((mat[i][j] < mat[i - 1][j - 1] * 2) ||
+		(mat[i][j] < mat[i - 1][j] * 2) ||
+		(mat[i][j] < mat[i - 1][j] * 2) ||
+		(mat[i][j] < mat[i][j - 1] * 2) ||
+		(mat[i][j] < mat[i][j + 1] * 2) ||
+		(mat[i][j] < mat[i + 1][j - 1] * 2) ||
+		(mat[i][j] < mat[i + 1][j] * 2) ||
+		(mat[i][j] < mat[i + 1][j + 1] * 2))
+		return 0;
+
+	return 1;
 }
 
 int condPicco(int centro, int intorno) {

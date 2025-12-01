@@ -15,17 +15,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Esercizio4-TDE09062009.cpp">
+    <ClCompile Include="es2-TDE24022012.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Esercizio4-5.c">
+    <ClCompile Include="TDE20210219-2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Esercizio 5 - tde 10-9-2008.c">
+    <ClCompile Include="TDE20210201-02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Esercizio 3.c">
+    <ClCompile Include="TDE20240205-2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

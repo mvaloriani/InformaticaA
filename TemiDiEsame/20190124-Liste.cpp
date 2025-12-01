@@ -14,8 +14,7 @@ Avremo quindi la sottolista degli studenti che hanno preso 18,
 quella degli studenti che hanno preso 19,
 e così via fino alla lista degli studenti
 che hanno preso 30 (per semplicità non si consideri il “30 e Lode” 
-e si immagini
-non esistano voti mai assegnati).
+e si immagini non esistano voti mai assegnati).
 */
 
 
@@ -97,7 +96,6 @@ void eliminaStudenteRifRic(Lista* l) {
 typedef struct SVNode {
 	int Voto;
 	Lista studenti;
-	//Studente* last;
 	struct SVNode* next;
 } StudentiVoto;
 
@@ -108,6 +106,8 @@ Graduatoria trova(Graduatoria g, int voto) {
 	{
 		if (g->Voto == voto)
 			return g;
+
+		g = g->next;
 	}
 	return NULL;
 }
@@ -162,12 +162,14 @@ void copy(Studente* s1, Studente* s2) {
 
 Graduatoria listaDiStudendiPerVoto(Lista l) {
 	Studente* sTemp = l;
-	StudentiVoto* svTemp = NULL;
+	Graduatoria svTemp = NULL;
 	Graduatoria g = NULL;
 
 	eliminaStudenteRif(&sTemp);
 
 	if (sTemp == NULL) return NULL;
+
+	//g = costruisciGraduatori();
 
 	while (sTemp != NULL)
 	{
@@ -181,6 +183,18 @@ Graduatoria listaDiStudendiPerVoto(Lista l) {
 		}
 	}
 	return g;
+}
+
+Graduatoria costruisciGraduatoria() {
+	StudentiVoto* svTemp = NULL;
+
+	for (int i = 18; i < 31; i++)
+	{
+		svTemp = buildSVNode(NULL);
+		svTemp->Voto = i;
+
+		InserisciInCodaRic(svTemp, g);
+	}
 }
 
 

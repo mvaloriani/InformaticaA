@@ -43,7 +43,7 @@ Classe ScuolaLingue[maxclassi]= {
 int main () { 
 	int i,j,cont=0;
 	float somma=0;
-	char linIng[]="inglese";
+	char linIng[]="inglese\0";
 
 	/* stampo tutti gli alunni di tutte le classi con eta' */
 	for (i=0;i<maxclassi;i++)

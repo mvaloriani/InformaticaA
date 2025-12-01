@@ -15,7 +15,17 @@ del minimo elemento pari nella lista(restituisce NULL
 se la lista non contiene elementi pari).
 */
 
-ListaDiInteri MinEven(ListaDiInteri lis) {
+Elemento* FirstEven(ListaDiInteri lis) {
+	if (lis == NULL)
+		return NULL;
+	
+	if (lis->s % 2 == 0)
+		return lis;
+
+	return FirstEven(lis->next);
+}
+
+ListaDiInteri MinEven(Elemento* lis) {
 	ListaDiInteri ris;
 	ris = FirstEven(lis);
 	if (ris != NULL) {
@@ -30,7 +40,7 @@ ListaDiInteri MinEven(ListaDiInteri lis) {
 }
 
 //Definiamo una funzione MinEl che restituisce il minimo tra due elementi
-ListaDiInteri MinEl(ListaDiInteri p, ListaDiInteri q) {
+ListaDiInteri MinEl(Elemento* p, ListaDiInteri q) {
 	if ((p->s) < (q->s))
 		return p;
 	else
@@ -47,6 +57,7 @@ ListaDiInteri MinEven(ListaDiInteri lis) {
 	else
 		if ((lis->s) % 2 != 0)
 			p = MinEven(lis->next);
+		
 		else {
 			p = MinEven(lis->next);
 			if (p != NULL)  

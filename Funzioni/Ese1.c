@@ -1,7 +1,6 @@
 /*
 Definire un nuovo tipo di dato chiamato VT vettore di 10 interi. 
 Scrivere in C la funzione ft che:
-
 ha in ingresso un vettore A di tipo VT già caricato e restituisce,
 attraverso un opportuno parametro, un vettore di tipo VT
 che contiene gli stessi elementi del vettore di ingresso 
@@ -9,8 +8,11 @@ ma in ordine inverso;
 restituisce il prodotto di tutti gli elementi di A.
 */
 
+
+
 #include <stdlib.h>
 #include <stdio.h>
+
 #define N 10
 typedef int VT[N];
 
@@ -26,7 +28,7 @@ RES ft3(VT A) {
 	temp.p = 1;
 
 	for (i = 0; i < N; i++) {
-		temp.B[N - i - 1] = A[i];
+		temp.B[N - 1  -i] = A[i];
 		temp.p = temp.p * A[i];
 	}
 	return temp;
@@ -48,7 +50,7 @@ void ft2(VT A, VT B, int *p) {
 int ft(VT A, VT B) {
 	int i, prod = 1;
 	for (i = 0; i < N; i++) {
-		B[N - i - 1] = A[i];
+		B[N - 1 -i] = A[i];
 		prod = prod * A[i];
 	}
 	return prod;
@@ -81,10 +83,9 @@ int main() {
 	for (j = 0; j<10; j++)
 		printf("%d\n", v[j]);
 
-	res = ft(&v[0], w);
-	//res = ft(v, w);
+	res = ft(&v[0], &w[0]);
+	res = ft(v, w);
 	//res = ft(&v[0], &w[0]);
-
 	ft2(v, w, &res);
 	RES res3 = ft3(v);
 

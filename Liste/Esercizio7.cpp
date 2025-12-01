@@ -13,8 +13,9 @@ typedef struct El {
 typedef Elemento* Lista;
 
 /*
-definire una funzionefoo che, data una Lista l
-ed un intero el inserisce el dopo il terzo elemento di l.
+definire una funzione foo che, data una Lista l
+ed un intero el inserisce el dopo il terzo 
+elemento di l.
 Se quest’ultima non contiene almeno tre elementi,
 viene lasciata inalterata.
 */
@@ -25,15 +26,28 @@ Lista third(Lista lis) {
 		count++;
 		lis = lis->next;
 	}
-	if (count == 3)
+	if (count == 3 && lis!=NULL)
 		return lis;
 	else
 		return NULL;
 }
 
+
+Lista third2(Lista lis, int n) {
+	int count = 1;
+	while (lis != NULL) {
+		count++;
+		lis = lis->next;
+		if (count == n)
+			return lis;
+	}
+	return NULL;
+}
+
 void foo(Lista lis, Tipo el) {
 	Lista tmp, new2;
 	tmp = third(lis);
+
 	if (tmp != NULL) {
 		new2 = malloc(sizeof(Elemento));
 		new2->next = tmp->next;
@@ -50,8 +64,9 @@ void foo2(Lista lis, Tipo el) {
 		tmp = lis->next->next;
 
 		new2 = malloc(sizeof(Elemento));
-		new2->next = tmp->next;
 		new2->s = el;
+
+		new2->next = tmp->next;
 		tmp->next = new2;
 	}
 	else

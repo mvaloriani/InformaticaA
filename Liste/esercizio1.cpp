@@ -45,11 +45,6 @@ int somma(ELEMENTO *Testa, int M) {
 	return sum;
 }
 
-int sommaRic2(ELEMENTO *Testa, int M) {
-	if (Testa == NULL)
-		return -1;
-	return sommaRic(Testa, M);
-}
 
 int sommaRic(ELEMENTO *Testa, int M) {
 	if (Testa == NULL)

@@ -1,15 +1,20 @@
 /*
-typedef struct Intv { unsigned small int r, c; } Casella;
+typedef struct Intv { unsigned small;
+int r, c; } Casella;
 typedef Casella TappetoElastico[10][10];
+
 Pare che tra le discipline degli ottocenteschi “circhi delle pulci” non ci fosse
 il tappeto elastico (non in quello del Prof. Heckler, almeno). Ma avrebbe potuto
 funzionare così: la pulce salta sulla prima cella (0,0) del tappeto elastico (quadrato),
 atterrandovi legge le coordinate (riga e colonna) della prossima cella su cui saltare,
 e da lì continua a saltare, ogni volta leggendo le coordinate della cella successiva verso
-cui saltare. Se/quando le coordinate lette indicano un punto esterno al tappeto, la pulce scende (applausi)
+cui saltare.
+
+Se/quando le coordinate lette indicano un punto esterno al tappeto, la pulce scende (applausi)
 Si implementino le seguenti funzioni in C e si spieghi brevemente come funzionano gli algoritmi usati.
 ... ciclico(...) che riceve in input un tappeto elastico e restituisce 1 se esso
 obbliga a saltare indefinitamente, 0 se invece a un certo punto la pulce potrà scendere
+
 ... contasalti(...) che riceve un tappeto elastico e misura il numero di salti che
 la pulce compie prima di scendere (se il tappeto non è ciclico), oppure -1
 ... dicoppia(...) che controlla se un tappeto è adatto all’esibizione di coppia:
@@ -27,7 +32,7 @@ typedef struct Intv {
 
 typedef Casella TappetoElastico[10][10];
 
-void clean(TappetoElastico tappeto){
+void clean(TappetoElastico tappeto) {
 	for (int i = 0; i < 10; i++)
 	{
 		for (int j = 0; j < 10; j++)
@@ -37,7 +42,7 @@ void clean(TappetoElastico tappeto){
 	}
 }
 
-int saltoFuori(Casella casella){
+int saltoFuori(Casella casella) {
 
 	if (casella.c >= 0 && casella.c < 10 &&
 		casella.r >= 0 && casella.r < 10)
@@ -46,13 +51,13 @@ int saltoFuori(Casella casella){
 		return 0;
 }
 
-int ciclico(TappetoElastico tappeto){
+int ciclico(TappetoElastico tappeto) {
 
 	clean(tappeto);
 
 	int c = 0, c1 = 0 r = 0, ciclo = 0;
 	while (saltoFuori(tappeto[r][c]) &&
-		ciclo == 0){
+		ciclo == 0) {
 
 		ciclo = tappeto[r][c].small;
 		tappeto[r][c].small = 1;
@@ -64,14 +69,30 @@ int ciclico(TappetoElastico tappeto){
 	return ciclo;
 }
 
-int contaSalti(TappetoElastico tappeto){
+int ciclico2(TappetoElastico tappeto) {
+	clean(tappeto);
+	int c = 0, c1 = 0 r = 0, ciclo = 0;
+	do
+	{
+		if (tappeto[r][c].small == 1)
+			return 1;
+		tappeto[r][c].small = 1;
+		c1 = tappeto[r][c].c;
+		r = tappeto[r][c].r;
+		c = c1;
+	} while (casella.c >= 0 && casella.c < 10 &&
+		casella.r >= 0 && casella.r < 10)
+		return 0;
+}
+
+int contaSalti(TappetoElastico tappeto) {
 	int salti = 0;
 	if (ciclico(tappeto))
 		return -1;
 	else
 	{
 		int r = 0, c = 0, c1;
-		do{
+		do {
 			salti++;
 			c1 = tappeto[r][c].c;
 			r = tappeto[r][c].r;
@@ -81,23 +102,49 @@ int contaSalti(TappetoElastico tappeto){
 	return salti;
 }
 
-int dicoppia(TappetoElastico tappeto){
+int dicoppiaMIN(TappetoElastico tappeto) {
 	if (ciclico2(tappeto, tappeto[0][0]) || ciclico2(tappeto, tappeto[9][9]))
-		return 0;
+		return -1;
 	else
 		return contaSalti2(tappeto, tappeto[0][0]) == contaSalti2(tappeto, tappeto[9][9]) ? 1 : 0;
+}
+
+int dicoppia(TappetoElastico tappeto) {
+	if (clico2(tappeto, tappeto[0][0]) || ciclico2(tappeto, tappeto[9][9]))
+		return -1;
+
+	int nSlati = contaSalti2(tappeto, tappeto[0][0]);
+	if (nSalti != contaSalti2(tappeto, tappeto[9][9]))
+		return -1;
+
+	int P1R=0 , P1C = 0;
+	int P2R=9 , P2C = 9;
+	int temp;
+	for (int i = 0; i < nSalti < i++) {
+		if (P1R == P2R && P1C == P2C)
+			return -1;
+
+		temp = tappeto[P1R][P1C].r;
+		P1C = tappeto[P1R][P1C].c;
+		P1R = temp;
+
+		temp = tappeto[P2R][P2C].r;
+		P2C = tappeto[P2R][P2C].c;
+		P2R = temp;
+	}
+
+	return 1;
 }
 
 
 
 
-
-int ciclico2(TappetoElastico tappeto, Casella casella){
+int ciclico2(TappetoElastico tappeto, Casella casella) {
 
 	clean(tappeto);
-	int c = casella.c, c1,  r = casella.r, ciclo = 0;
+	int c = casella.c, c1, r = casella.r, ciclo = 0;
 	while (saltoFuori(tappeto[r][c]) &&
-		ciclo == 0){
+		ciclo == 0) {
 
 		ciclo = tappeto[r][c].small;
 		tappeto[r][c].small = 1;
@@ -108,14 +155,14 @@ int ciclico2(TappetoElastico tappeto, Casella casella){
 
 	return ciclo;
 }
-int contaSalti2(TappetoElastico tappeto, Casella casella){
+int contaSalti2(TappetoElastico tappeto, Casella casella) {
 	int salti = 0;
 	if (ciclico(tappeto))
 		return -1;
 	else
 	{
 		int r = casella.r, c = casella.c;
-		do{
+		do {
 			salti++;
 			c = tappeto[r][c].c;
 			r = tappeto[r][c].r;
@@ -124,11 +171,11 @@ int contaSalti2(TappetoElastico tappeto, Casella casella){
 	return salti;
 }
 
-int ciclico3(TappetoElastico tappeto, Casella casella){
+int ciclico3(TappetoElastico tappeto, Casella casella) {
 	clean(tappeto);
 	return ciclicoRicorsivo(tappeto, casella);
 }
-int ciclicoRicorsivo(TappetoElastico tappeto, Casella casella){
+int ciclicoRicorsivo(TappetoElastico tappeto, Casella casella) {
 	if (saltoFuori(casella))
 		return 0;
 
@@ -138,7 +185,7 @@ int ciclicoRicorsivo(TappetoElastico tappeto, Casella casella){
 	return ciclicoRicorsivo(tappeto, tappeto[casella.r][casella.c]);
 }
 
-int contaSalti3(TappetoElastico tappeto, Casella casella){
+int contaSalti3(TappetoElastico tappeto, Casella casella) {
 
 	if (ciclico2(tappeto, casella))
 		return -1;
@@ -146,7 +193,7 @@ int contaSalti3(TappetoElastico tappeto, Casella casella){
 		return	contaSaltiRicorsivo(tappeto, casella);
 
 }
-int contaSaltiRicorsivo(TappetoElastico tappeto, Casella casella){
+int contaSaltiRicorsivo(TappetoElastico tappeto, Casella casella) {
 
 	if (saltoFuori(casella))
 		return 1;

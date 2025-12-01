@@ -22,8 +22,7 @@ legga i dati in ingresso e li inserisca nei due vettori.
 
 Successivamente per ogni studente con matricola X 
 contenuto nel vettore M sommi tutti i suoi voti ottenuti
-negli esami contenuti nel vettore V. 
-
+negli esami contenuti nel vettore V. 
 */
 
 #include <stdio.h> 
@@ -55,9 +54,8 @@ int main(){
 	for(i=0;i<DIMM;i++){
 		printf("Inserisci Matricola, Nome, Cognome\n");
 		scanf("%d",&M[i].matricola);
-		//scanf("%s",M[i].Nome);
-		//scanf("%s", M[i].Cognome);
-	
+		scanf("%s",M[i].Nome);
+		scanf("%s", M[i].Cognome);	
 
 		trovato=0;
 

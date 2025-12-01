@@ -21,11 +21,10 @@ int copiaPari(int A[], int B[]) {
 	// i usato per scorrere A
 	// j punta sempre al primo elemento libero di B
 		for (i = 0; i < N; i++)
-		if (A[i] % 2 == 0) {
-			B[j] = A[i];
-			j++;
-		}
-
+			if (A[i] % 2 == 0) {
+				B[j] = A[i];
+				j++;
+			}
 	return j;
 }
 
@@ -49,9 +48,12 @@ arrayConCont copiaPari2(int A[]) {
 	// elemento di ac.v
 	for (i = 0; i < N; i++)
 		if (A[i] % 2 == 0) {
+			/*ac.v[j] = A[i];
+			j++;*/
 			ac.v[ac.cont] = A[i];
 			ac.cont++;
 		}
+	//ac.cont=j;
 	return ac;
 }
 
@@ -67,9 +69,7 @@ e una struct composta da un intero e da un array. La funzione
 modifica la struct inserendo nell’array gli elementi pari dell’array
 che riceve in input e assegna all’intero contenuto nella struct il
 numero di elementi copiati.
-
 */
-
 
 void copiaPari4(int A[], arrayConCont *ac) {
 	int i;	// i usato per scorrere A
@@ -84,7 +84,6 @@ void copiaPari4(int A[], arrayConCont *ac) {
 }
 
 void copiaPari5(int A[], arrayConCont* ac) {
-	int i;	// i usato per scorrere A
 	ac->cont = 0; // ac->cont punta sempre al primo elemento di ac.v
 	ac->cont = copiaPari(A, ac->v); //*ac.cont = copiaPari(A, (*ac).v);
 }

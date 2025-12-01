@@ -22,6 +22,9 @@ void foo(Lista lis1, Lista lis2) {
 	//fun2(,);
 }
 
+
+
+
 /* Errore di compilazione perchè la funzione ritorna void
 */
 

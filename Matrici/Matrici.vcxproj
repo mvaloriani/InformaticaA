@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Esercizio1.c" />
+    <ClCompile Include="Ese2.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D94DA414-9581-45F3-A5C3-A6CC8E86868B}</ProjectGuid>

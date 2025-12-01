@@ -35,11 +35,12 @@ int myrand(int inf, int sup){
 }
 
 void lancia(int lanci,int facce) {
-	int i,j, val, flag; faccia dado[N], temp;
+	int i, j, val, flag; faccia dado[N], temp, vettoredado[N];
 	
 	//creo il dado
 	for(i=0;i<facce;i++) {  
 		dado[i].valore=i+1; dado[i].quanti=0; 
+		//vettoredado[i] = 0;
 	}
 
 
@@ -47,6 +48,7 @@ void lancia(int lanci,int facce) {
 	for(i=0;i<lanci;i++) {
 		val=myrand(1,facce);
 		dado[val-1].quanti++;
+		//vettoredado[val - 1]++;
 	}
 
 	//ordinamento
@@ -59,6 +61,21 @@ void lancia(int lanci,int facce) {
 			}
 		}
 	}
+
+	int res[N];
+	int cont=0;
+	for (int k = 0; k <= lanci; k++)
+	{
+		for ( i = 0; i < facce; i++)
+		{
+			if (vettoredado[i] == k) {
+				res[cont] = i+1;
+				cont++;
+			}
+		}
+	}
+
+
 
 	//do	{
 	//	flag = 0; //reiniziallizzo a zero il flag
@@ -93,5 +110,10 @@ void lancia(int lanci,int facce) {
 		if(dado[i].quanti>1)
 			printf("La faccia %d è uscita %d volte" , dado[i].valore, dado[i].quanti);
 	}
-}
 
+	for ( i = 0; i < face; i++)
+	{
+		printf("La faccia %d è uscita %d volte", res[i], vettoredado[res[i]-1]);
+	}
+
+}
