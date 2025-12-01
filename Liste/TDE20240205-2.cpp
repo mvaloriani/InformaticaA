@@ -114,6 +114,29 @@ TreListe dividiListe(Lista lis, int s1, int s2) {
 }
 
 
+TreListe dividiListe(Lista lis, int s1, int s2) {
+    TreListe risultato;
+    risultato.minori = NULL;
+    risultato.compresi = NULL;
+    risultato.maggiori = NULL;
+
+    divRic(lis, s1, s2, &risultato);
+}
+
+void divRic(Lista lis, int s1, int s2, TreListe* tl) {
+    if (lis == NULL) return;
+    if (lis->next != NULL)
+        divRic(lis->next, s1, s2, tl);
+
+    if (lis->dato < s1)      
+        tl->minori =  IIT(tl->minori,lis->dato); 
+    else if (lis->dato < s2)
+        tl->compresi = IIT(tl->compresi, lis->dato);
+    else
+        tl->maggiori = IIT(tl->maggiori, lis->dato);
+}
+
+
 Lista costruisci() {
 	int v[] = { 2,4,7,21,9,11,5,1,3,4,
 			  12,6,23,11,8,12,7,11,4,100,
